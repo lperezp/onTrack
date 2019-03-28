@@ -4,11 +4,11 @@ import { Component, ViewChild } from "@angular/core";
 import { Nav, Platform } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
-
 import { HomePage } from "../pages/home/home";
 import { ListPage } from "../pages/list/list";
 import { DetalleClientePage } from "../pages/detalle-cliente/detalle-cliente";
 import { FormPage } from '../pages/form/form';
+import { Form2Page } from '../pages/form2/form2';
 
 @Component({
   templateUrl: "app.html"
@@ -16,7 +16,7 @@ import { FormPage } from '../pages/form/form';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = FormPage;
+  rootPage: any = HomePage;
 
   pages: Array<{ title: string; component: any }>;
 
@@ -30,7 +30,11 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: "Home", component: HomePage },
-      { title: "Cliente Seleccionado", component: SelectedClientePage }
+      { title: "Cliente Seleccionado", component: SelectedClientePage },
+      { title: "Detalle del Servicio", component: DetalleClientePage },
+      { title: "Firma", component: FirmaPage },
+      { title: "Formulario 1", component: FormPage },
+      { title: "Formulario 2", component: Form2Page }
     ];
   }
 
