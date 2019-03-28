@@ -1,3 +1,4 @@
+import { FirmaPage } from './../pages/firma/firma';
 import { SelectedClientePage } from "./../pages/selected-cliente/selected-cliente";
 import { Component, ViewChild } from "@angular/core";
 import { Nav, Platform } from "ionic-angular";
@@ -6,6 +7,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 
 import { HomePage } from "../pages/home/home";
 import { ListPage } from "../pages/list/list";
+import { DetalleClientePage } from "../pages/detalle-cliente/detalle-cliente";
 
 @Component({
   templateUrl: "app.html"
@@ -13,7 +15,7 @@ import { ListPage } from "../pages/list/list";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SelectedClientePage;
+  rootPage: any = FirmaPage;
 
   pages: Array<{ title: string; component: any }>;
 

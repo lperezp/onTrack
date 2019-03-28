@@ -64,7 +64,6 @@ h4,
 h5,
 h6,
 p,
-span,
 small {
   color: #666666 !important;
 }
@@ -76,9 +75,33 @@ small {
 .text-secondary {
   color: #007093 !important;
 }
+.text-white{
+  color: white !important;
+}
 
 .scroll-content {
   padding: 5px !important;
+}
+
+.center{
+  margin: 0 auto !important
+}
+
+.box-img{
+  height: 60px;
+  width: 60px;
+  border: 1px solid;
+  border-color: #007093;
+  display:inline-block;
+}
+
+.max-icono{
+  font-size: 35px;
+}
+
+.footer{
+  bottom: 4px !important;
+  text-align: center;
 }
 
 // Ionicons
