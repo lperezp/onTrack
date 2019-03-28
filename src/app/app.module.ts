@@ -1,3 +1,4 @@
+import { FirmaPage } from './../pages/firma/firma';
 import { SelectedClientePage } from "./../pages/selected-cliente/selected-cliente";
 import { BrowserModule } from "@angular/platform-browser";
 import { ErrorHandler, NgModule } from "@angular/core";
@@ -12,10 +13,10 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { DetalleClientePage } from "../pages/detalle-cliente/detalle-cliente";
 
 @NgModule({
-  declarations: [MyApp, HomePage, ListPage, SelectedClientePage,DetalleClientePage],
+  declarations: [MyApp, HomePage, ListPage, FirmaPage, SelectedClientePage,DetalleClientePage],
   imports: [BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, ListPage, SelectedClientePage,DetalleClientePage],
+  entryComponents: [MyApp, HomePage, ListPage, FirmaPage, SelectedClientePage,DetalleClientePage],
   providers: [
     StatusBar,
     SplashScreen,
