@@ -1,6 +1,21 @@
 // http://ionicframework.com/docs/theming/
+ion-avatar,
+ion-avatar > img{
+    height:30px;
+    width:30px;
+}
 
+ion-avatar{
+    background-color: white;
+    border-radius:50%;
+    padding: 10px;
+    height:50px;
+    width:50px;
+}
 
+.list .item-block .item-inner{
+    border-bottom: 0px;
+}
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

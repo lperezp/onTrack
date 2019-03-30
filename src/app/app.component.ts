@@ -18,7 +18,8 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{ title: string; component: any }>;
+  pages: Array<{ icono:string, title: string; component: any }>;
+  pages2: Array<{ icono:string, title: string; component: any }>;
 
   constructor(
     public platform: Platform,
@@ -29,13 +30,18 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: "Home", component: HomePage },
-      { title: "Cliente Seleccionado", component: SelectedClientePage },
-      { title: "Detalle del Servicio", component: DetalleClientePage },
-      { title: "Firma", component: FirmaPage },
-      { title: "Formulario 1", component: FormPage },
-      { title: "Formulario 2", component: Form2Page }
+      { icono:"briefcase", title: "OTs Pendientes", component: HomePage },
+      { icono:"search", title: "OTs Programadas", component: SelectedClientePage },
+      { icono:"refresh", title: "Sincronizar", component: DetalleClientePage }
+     /*  { icono:"exit", title: "Firma", component: FirmaPage },
+      { icono:"information-circle-outline", title: "Formulario 1", component: FormPage },
+      { icono:"briefcase", title: "Formulario 2", component: Form2Page } */
     ];
+
+    this.pages2 = [
+      { icono:"exit", title: "Salir", component: FirmaPage },
+      { icono:"alert", title: "Versión", component: FormPage }
+    ]
   }
 
   initializeApp() {
