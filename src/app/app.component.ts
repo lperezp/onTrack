@@ -31,8 +31,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { icono:"briefcase", title: "OTs Pendientes", component: HomePage },
-      { icono:"search", title: "OTs Programadas", component: SelectedClientePage },
-      { icono:"refresh", title: "Sincronizar", component: DetalleClientePage }
+      { icono:"search", title: "OTs Programadas", component: HomePage },
+      { icono:"refresh", title: "Sincronizar", component: HomePage }
      /*  { icono:"exit", title: "Firma", component: FirmaPage },
       { icono:"information-circle-outline", title: "Formulario 1", component: FormPage },
       { icono:"briefcase", title: "Formulario 2", component: Form2Page } */

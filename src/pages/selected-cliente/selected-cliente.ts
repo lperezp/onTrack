@@ -14,12 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'selected-cliente.html',
 })
 export class SelectedClientePage {
-
+  cliente: any;  
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.cliente = navParams.data;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SelectedClientePage');
+  }
+
+  ngOnInit() {
+    console.log('Elegido: ', this.cliente);
   }
 
 }

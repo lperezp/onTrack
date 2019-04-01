@@ -1,3 +1,4 @@
+import { ServiceApiProvider } from './../../providers/service-api/service-api';
 import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
 
@@ -6,9 +7,13 @@ import { NavController } from "ionic-angular";
   templateUrl: "home.html"
 })
 export class HomePage {
-  ot = [];
-  constructor(public navCtrl: NavController) {
-    this.ot = [
+  ot : any;
+  clienteSelected : any;
+  constructor(public navCtrl: NavController, private apiService: ServiceApiProvider) {
+
+    this.getAllServices();
+
+    /* this.ot = [
       {
         id: 1,
         codigo: "0033-08-11",
@@ -46,7 +51,7 @@ export class HomePage {
         estado: "Pendiente"
       },
       {
-        id: 3,
+        id: 5,
         codigo: "00006-09-20",
         cliente: "TELEPIZZA MAL DEL SUR",
         direccion: "Av. Los Lirios 301 Cuarto Nivel",
@@ -54,6 +59,19 @@ export class HomePage {
         producto: "Productora de Hielo: 20171115",
         estado: "En destino"
       }
-    ];
+    ]; */
+  }
+
+  getAllServices(){
+    this.apiService.getServicios().subscribe(res =>{
+      this.ot= res['jobs'];
+      console.log(this.ot);
+    })
+  }
+
+  openSelectedClientePage(selectedItem: any) {
+    this.clienteSelected = selectedItem;
+    console.log(this.clienteSelected);
+    this.navCtrl.push("SelectedClientePage",this.clienteSelected);
   }
 }

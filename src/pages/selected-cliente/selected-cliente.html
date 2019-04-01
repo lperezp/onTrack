@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>ID: #6</ion-title>
+    <ion-title>ID: #{{ cliente.services_id }}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -14,12 +14,14 @@
     </h5>
   </div>
   <h4 class="text-secondary underline">Destino</h4>
-  <h5 class="font-weight-bold">CASINO JOCKER</h5>
-  <h5>CASINO JOCKER</h5>
-  <h5>CASINO JOCKER</h5>
-  <h4 class="text-secondary underline">Destino</h4>
-  <h5 class="font-weight-bold">Preventivo - Prod. de Hielo</h5>
-  <h5>Productora de hielo: 1101191683</h5>
+  <div class="destino">
+    <h5 class="font-weight-bold">{{ cliente.destination_name }}</h5>
+    <h5>{{ cliente.destination_address }}</h5>
+    <h5>{{ cliente.destination_entity_info }}</h5>
+    <h4 class="text-secondary underline">Producto</h4>
+    <h5 class="font-weight-bold">{{ cliente.service_name }}</h5>
+    <h5>{{ cliente.product_name }}</h5>
+  </div>
   <div class="row footer">
     <div class="col text-center">
       <ion-icon name="close" color="secondary"></ion-icon>
@@ -30,8 +32,5 @@
     <div class="col text-center">
       <ion-icon name="checkmark" color="secondary"></ion-icon>
     </div>
-    
-    
-    
   </div>
 </ion-content>
