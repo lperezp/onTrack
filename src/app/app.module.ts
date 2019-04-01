@@ -18,10 +18,10 @@ import { FormPage } from '../pages/form/form';
 import { MyNavProvider } from '../providers/my-nav/my-nav';
 
 @NgModule({
-  declarations: [MyApp,FormPage,Form2Page, HomePage, ListPage, FirmaPage],
+  declarations: [MyApp, HomePage, ListPage, FirmaPage],
   imports: [BrowserModule, HttpClientModule,IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp,FormPage,Form2Page, HomePage, ListPage, FirmaPage],
+  entryComponents: [MyApp, HomePage, ListPage, ],
   providers: [
     StatusBar,
     ServiceApiProvider,

@@ -17,5 +17,9 @@ export class DetalleClientePage {
     console.log('ionViewDidLoad DetalleClientePage');
   }
 
+  openFormulario(){
+    this.navCtrl.push("FormPage")
+  }
+
  
 }
