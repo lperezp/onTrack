@@ -24,4 +24,11 @@ export class ServiceApiProvider {
       });
   }
 
+  // METODO PARA CONSULTAR LAS ENCUESTAS  
+  public getEncuestas() {
+    return this.http.get(this.rutaAPI + "encuesta.json").map((res: Response) => {
+        return res;
+      });
+  }
+
 }

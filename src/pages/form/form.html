@@ -5,30 +5,13 @@
 </ion-header>
 
 <ion-content padding>
-<div class="row">
-  <div class="col-12">
-    <h4>Proporción de jarabe(ES)</h4>
-    <ion-input placeholder="Enter Input" color="dark"></ion-input>
+<div class="row"*ngFor="let encuesta of encuestas">
+  <div class="col-12" *ngFor="let title of encuesta.groups">
+    <h4>{{ title.name }}</h4>
+    <div *ngFor="let attributes of title.attributes" >
+      <p>{{ attributes.attribute_name }}</p>
+      <p>{{ attributes.widget_type }}</p>
   </div>
-  <div class="col-12">
-    <h4>Proporción de jarabe(TOTAL)</h4>
-    <ion-input placeholder="Enter Input" color="dark"></ion-input>
-  </div>
-  <div class="col-12">
-    <h4>Carbonatación</h4>
-    <h5><input type="radio" name="carbonatacion"> P</h5>
-    <h5><input type="radio" name="carbonatacion"> F</h5>
-  </div>
-  <div class="col-12">
-    <h4>Carbonatación PRESION (PSI)</h4>
-    <ion-input placeholder="Enter Input" color="dark"></ion-input>
-  </div>
-  <div class="col-12">
-    <h4>Carbonatación VOL GAS (VG)</h4>
-    <ion-input placeholder="Enter Input" color="dark"></ion-input>
-  </div>
-  <div class="col-12 mt-3 text-center">
-  <button ion-button color="secondary" >Grabar</button>
-  </div>
+</div>
 </div>
 </ion-content>

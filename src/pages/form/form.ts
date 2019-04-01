@@ -1,3 +1,4 @@
+import { ServiceApiProvider } from './../../providers/service-api/service-api';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -13,13 +14,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-form',
   templateUrl: 'form.html',
 })
+
 export class FormPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+ encuestas : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private apiService : ServiceApiProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FormPage');
+  ngOnInit() {
+    this.getAllServices();
   }
-
+  getAllServices(){
+    this.apiService.getEncuestas().subscribe(res =>{
+      this.encuestas= res['survey_metadata'];
+      console.log(this.encuestas);
+    })
+  }
 }
