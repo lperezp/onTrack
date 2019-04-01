@@ -27,4 +27,8 @@ export class SelectedClientePage {
     console.log('Elegido: ', this.cliente);
   }
 
+  openDetalleCliente(){
+    this.navCtrl.push("DetalleClientePage");
+  }
+
 }
