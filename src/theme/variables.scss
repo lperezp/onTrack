@@ -75,31 +75,27 @@ small {
 .text-secondary {
   color: #007093 !important;
 }
-.text-white{
+.text-white {
   color: white !important;
 }
 
-.scroll-content {
-  padding: 5px !important;
+.center {
+  margin: 0 auto !important;
 }
 
-.center{
-  margin: 0 auto !important
-}
-
-.box-img{
+.box-img {
   height: 60px;
   width: 60px;
   border: 1px solid;
   border-color: #007093;
-  display:inline-block;
+  display: inline-block;
 }
 
-.max-icono{
+.max-icono {
   font-size: 35px;
 }
 
-.footer{
+.footer {
   bottom: 4px !important;
   text-align: center;
 }

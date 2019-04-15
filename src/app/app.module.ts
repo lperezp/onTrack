@@ -1,3 +1,5 @@
+import { FirmaPage } from './../pages/firma/firma';
+import { LoginPage } from './../pages/login/login';
 import { ServiceApiProvider } from './../providers/service-api/service-api';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from "@angular/platform-browser";
@@ -14,10 +16,10 @@ import { UuidServiceProvider } from '../providers/uuid-service/uuid-service';
 import { Camera } from '@ionic-native/camera';
 
 @NgModule({
-  declarations: [MyApp, HomePage, ListPage],
+  declarations: [MyApp, HomePage, ListPage,LoginPage,FirmaPage],
   imports: [BrowserModule, HttpClientModule,IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, ListPage, ],
+  entryComponents: [MyApp, HomePage, ListPage, LoginPage,FirmaPage],
   providers: [
     StatusBar,
     ServiceApiProvider,

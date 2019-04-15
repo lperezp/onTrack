@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 /*
   Generated class for the UuidServiceProvider provider.
@@ -8,10 +8,9 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UuidServiceProvider {
-  public UUID: number;
+  public UUID: any;
   constructor() {
-    this.UUID = 123456789123456;
-    console.log('Este es tu UUID: ',this.UUID);
+    this.UUID = "123 - 456 - 789 - 123 - 456";
+    console.log("Este es tu UUID: ", this.UUID);
   }
-
 }

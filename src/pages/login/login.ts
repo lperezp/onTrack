@@ -1,3 +1,5 @@
+import { HomePage } from './../home/home';
+import { UuidServiceProvider } from './../../providers/uuid-service/uuid-service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -14,12 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+ uuid : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private uuidVar : UuidServiceProvider) {
+     this.uuid = this.uuidVar.UUID;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  openHome(){
+    this.navCtrl.push(HomePage);
   }
 
 }

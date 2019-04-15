@@ -1,13 +1,16 @@
 page-home {
   .card-content {
     padding: 3px !important;
-    
   }
-  ion-card{
+  ion-card {
     border-left: 5px solid;
   }
-  .estado{
+  .estado {
     right: 3px !important;
     position: absolute;
+  }
+
+  .scroll-content {
+    padding: 5px !important;
   }
 }
