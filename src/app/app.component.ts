@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { FirmaPage } from './../pages/firma/firma';
 import { SelectedClientePage } from "./../pages/selected-cliente/selected-cliente";
 import { Component, ViewChild } from "@angular/core";
@@ -8,7 +9,7 @@ import { HomePage } from "../pages/home/home";
 import { ListPage } from "../pages/list/list";
 import { DetalleClientePage } from "../pages/detalle-cliente/detalle-cliente";
 import { FormPage } from '../pages/form/form';
-import { Form2Page } from '../pages/form2/form2';
+
 
 @Component({
   templateUrl: "app.html"
@@ -16,7 +17,7 @@ import { Form2Page } from '../pages/form2/form2';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{ icono:string, title: string; component: any }>;
   pages2: Array<{ icono:string, title: string; component: any }>;
