@@ -1,7 +1,6 @@
 {
-  "name": "ontrack",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
+  "name": "ontrackApp",
+  "integrations": {},
+  "type": "angular",
+  "id": "ce8c7012"
 }
