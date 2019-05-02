@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 export class OtsService {
   constructor(private dataService: DataService) {}
 
-  getAllOTS() {
-    return this.dataService.get("jobs/search?userConfigurationIdList=" + 10);
+  getAllOTS(user_configurations_id) {
+    return this.dataService.get("jobs/search?userConfigurationIdList=" + user_configurations_id);
   }
 }

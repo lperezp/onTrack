@@ -1,22 +1,19 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HTTP } from '@ionic-native/http/ngx';
 
 const rutaAPI = "http://ontrack-dev.gerenpop.com:4000/mobile/api/v1/";
-const httpOptions = {
-  headers: new HttpHeaders({ "Content-Type": "application/json" })
-};
-
+const header = "{ 'Content-Type': 'application/json' }";
 @Injectable({
   providedIn: "root"
 })
 export class DataService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HTTP) {}
 
-  get(ruta) {
-    return this.http.get(rutaAPI + ruta);
+ get(ruta){
+  return this.http.get(rutaAPI + ruta, {},{} )
   }
 
-  post(ruta, data) {
-    return this.http.post(rutaAPI + ruta, data, httpOptions);
-  }
+  post(ruta,body){
+    return this.http.post(rutaAPI + ruta,body,header)
+    }
 }
