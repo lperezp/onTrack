@@ -1,5 +1,7 @@
 {
   "name": "ontrack",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
