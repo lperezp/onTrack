@@ -21,10 +21,9 @@
   <p>{{ respuesta }}</p>
   <ion-button
     style="height:50px;width: 100%"
-    (click)="signin()"
     color="primary"
+    [routerLink]="['/ots-pendientes']"
   >
-    <!-- [routerLink]="['/ots']" -->
     INICIAR SESIÓN
   </ion-button>
 </ion-content>

@@ -1,19 +1,20 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: "",
+    redirectTo: "ots-pendientes",
+    pathMatch: "full"
   },
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    path: "home",
+    loadChildren: "./home/home.module#HomePageModule"
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
+    path: "ots-pendientes",
+    loadChildren:
+      "./ots-pendientes/ots-pendientes.module#OtsPendientesPageModule"
   }
 ];
 

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      OTs Pendientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card
+    style="border-left: 5px solid"
+    [ngStyle]="{ 'border-left-color': red }"
+  >
+    <ion-card-content>
+      <p>
+        ID: #3942
+        <span class="estado font-weight-bold text-right">Pendiente</span>
+      </p>
+      <small>2019-03-22</small>
+      <p class="font-weight-bold">LUGAR DEMO</p>
+      <p>AV. GRAU 179</p>
+      <p class="font-weight-bold">Preventivo - Bin de Hielo</p>
+      <p>Bin de Hielo: 1101191790</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
