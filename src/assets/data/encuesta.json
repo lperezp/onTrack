@@ -1,0 +1,368 @@
+{
+  "survey": [
+    {
+      "survey_id": 1,
+      "code": "TAC",
+      "name": "TAC Piloto Material POP",
+      "description": "Encuesta piloto",
+      "start_date": "2019-04-01",
+      "end_date": "2019-04-15",
+      "customers_id": 1,
+      "customers_name": "Nestlé",
+      "info_request_sequences_id": 1,
+      "info_request_sequences": [
+        {
+          "group_sequence": 1,
+          "sequence": 1,
+          "quantity": null,
+          "domains_id": 27,
+          "domain_name": "Survey",
+          "updated_by": 1,
+          "updated_at": "2019-03-30"
+        },
+        {
+          "group_sequence": 1,
+          "sequence": 2,
+          "quantity": 0,
+          "domains_id": 31,
+          "domain_name": "Evidence Configuration",
+          "updated_by": 1,
+          "updated_at": "2019-03-30"
+        },
+        {
+          "group_sequence": 1,
+          "sequence": 3,
+          "quantity": 1,
+          "domains_id": 32,
+          "domain_name": "Evidence Configuration",
+          "updated_by": 1,
+          "updated_at": "2019-03-30"
+        }
+      ]
+    },
+    {
+      "survey_id": 2,
+      "code": "TAC",
+      "name": "TAC Abril 2019",
+      "description": "TAC de Marzoarzo 2019",
+      "start_date": "2019-04-01",
+      "end_date": "2019-04-30",
+      "customers_id": 1,
+      "customers_name": "Nestlé",
+      "info_request_sequences_id": 2,
+      "info_request_sequences": [
+        {
+          "group_sequence": 1,
+          "sequence": 1,
+          "quantity": null,
+          "domains_id": 28,
+          "domain_name": "Survey",
+          "updated_by": 1,
+          "updated_at": "2019-03-30"
+        },
+        {
+          "group_sequence": 1,
+          "sequence": 2,
+          "quantity": 0,
+          "domains_id": 30,
+          "domain_name": "Digital Signature",
+          "updated_by": 1,
+          "updated_at": "2019-03-30"
+        }
+      ]
+    }
+  ],
+  "survey_metadata": [
+    {
+      "survey_metadata_id": 27,
+      "survey_code": "TAC",
+      "survey_name": "TAC Piloto 2019",
+      "groups": [
+        {
+          "groups_id ": 1,
+          "sequence": 1,
+          "name": "Información del cliente",
+          "attributes": [
+            {
+              "sequence": 1,
+              "is_mandatory": 1,
+              "attributes_id": 1,
+              "attribute_name": "Nombre o razón social de cliente",
+              "attribute_code_name": "ICNombre",
+              "widget_type": "TextView",
+              "include_others": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": 0
+            },
+            {
+              "sequence": 2,
+              "is_mandatory": 1,
+              "attributes_id": 2,
+              "attribute_name": "Clasificación de cliente",
+              "attribute_code_name": "ICClasificacion",
+              "widget_type": "RadioGroup",
+              "include_others": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": 1
+            }
+          ]
+        },
+        {
+          "groups_id ": 2,
+          "sequence": 2,
+          "name": "Disponibilidad MAXIS",
+          "attributes": [
+            {
+              "sequence": 1,
+              "is_mandatory": 1,
+              "attributes_id": 3,
+              "attribute_name": "Disponibilidad Bombones",
+              "attribute_code_name": "DMBombones",
+              "widget_type": "CheckGroup",
+              "include_others": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": 1
+            },
+            {
+              "sequence": 2,
+              "is_mandatory": 0,
+              "attributes_id": 4,
+              "attribute_name": "Fecha de vencimiento bombones",
+              "attribute_code_name": "FVBombones",
+              "widget_type": "Datepicker",
+              "include_others": 0,
+              "attribute_types_id": 4,
+              "attribute_type_name": "Datetime",
+              "has_selection": 0
+            },
+            {
+              "sequence": 3,
+              "is_mandatory": 0,
+              "attributes_id": 5,
+              "attribute_name": "Observaciones bombones",
+              "attribute_code_name": "ObsBombones",
+              "widget_type": "MultilineText",
+              "include_others": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "survey_metadata_id": 28,
+      "survey_code": "TAC",
+      "domain_name": "TAC Abril 2019",
+      "groups": [
+        {
+          "groups_id ": 3,
+          "sequence": 1,
+          "name": "Información del cliente",
+          "attributes": [
+            {
+              "sequence": 1,
+              "is_mandatory": 1,
+              "attributes_id": 1,
+              "attribute_name": "Nombre o razón social de cliente",
+              "attribute_code_name": "ICNombre",
+              "widget_type": "Dropdownlist",
+              "include_others": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": 1
+            },
+            {
+              "sequence": 2,
+              "is_mandatory": 1,
+              "attributes_id": 2,
+              "attribute_name": "Clasificación de cliente",
+              "attribute_code_name": "ICClasificacion",
+              "widget_type": "RadioGroup",
+              "include_others": 1,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": 1
+            }
+          ]
+        },
+        {
+          "domain_attribute_groups_id ": 4,
+          "sequence": 2,
+          "name": "Calificación de vendedor",
+          "domain_attributes_id": [
+            {
+              "sequence": 1,
+              "is_mandatory": 1,
+              "attributes_id": 6,
+              "attribute_name": "Calificación",
+              "attribute_code_name": "CalifVendedor",
+              "widget_type": "RatingBar",
+              "include_others": 0,
+              "attribute_types_id": 3,
+              "attribute_type_name": "Numeric",
+              "has_selection": 1
+            },
+            {
+              "sequence": 2,
+              "is_mandatory": 0,
+              "attributes_id": 7,
+              "attribute_name": "Obser",
+              "attribute_code_name": "FVBombones",
+              "widget_type": "Datepicker",
+              "include_others": 0,
+              "attribute_types_id": 4,
+              "attribute_type_name": "Datetime",
+              "has_selection": 0
+            },
+            {
+              "sequence": 3,
+              "is_mandatory": 0,
+              "attributes_id": 5,
+              "attribute_name": "Observaciones bombones",
+              "attribute_code_name": "ObsBombones",
+              "widget_type": "MultilineText",
+              "include_others": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "attribute_values": [
+    {
+      "attributes_id": 2,
+      "values": [
+        {
+          "code": "CCA",
+          "value": "A",
+          "sequence": 1
+        },
+        {
+          "code": "CCB",
+          "value": "B",
+          "sequence": 2
+        },
+        {
+          "code": "CCC",
+          "value": "C",
+          "sequence": 3
+        }
+      ]
+    },
+    {
+      "attributes_id": 3,
+      "values": [
+        {
+          "code": "DispBombonesVainilla",
+          "value": "Vainilla",
+          "sequence": 1
+        },
+        {
+          "code": "DispBombonesLucuma",
+          "value": "Lucuma",
+          "sequence": 2
+        }
+      ]
+    },
+    {
+      "attributes_id": 4,
+      "values": [
+        {
+          "code": "605001",
+          "value": "Bembos Centro Civico",
+          "sequence": 1
+        },
+        {
+          "code": "605002",
+          "value": "Bembos Salaverry",
+          "sequence": 2
+        },
+        {
+          "code": "605501",
+          "value": "Telepizza Centro Civico",
+          "sequence": 3
+        },
+        {
+          "code": "605502",
+          "value": "Telepizza Salaverry",
+          "sequence": 4
+        }
+      ]
+    },
+    {
+      "attributes_id": 5,
+      "values": [
+        {
+          "code": "CCA",
+          "value": "A",
+          "sequence": 1
+        },
+        {
+          "code": "CCB",
+          "value": "B",
+          "sequence": 2
+        },
+        {
+          "code": "CCC",
+          "value": "C",
+          "sequence": 3
+        }
+      ]
+    },
+    {
+      "attributes_id": 5,
+      "values": [
+        {
+          "code": "RT1",
+          "value": "1",
+          "sequence": 1
+        },
+        {
+          "code": "RT2",
+          "value": "2",
+          "sequence": 2
+        },
+        {
+          "code": "RT3",
+          "value": "3",
+          "sequence": 3
+        },
+        {
+          "code": "RT4",
+          "value": "4",
+          "sequence": 4
+        },
+        {
+          "code": "RT5",
+          "value": "5",
+          "sequence": 5
+        }
+      ]
+    }
+  ],
+  "evidence_digital_configuration": [
+    {
+      "domains_id": 30,
+      "domains_name": "Firma",
+      "quantity": 1
+    },
+    {
+      "domains_id": 31,
+      "domains_name": "Equipo",
+      "quantity": 0
+    },
+    {
+      "domains_id": 32,
+      "domains_name": "Local",
+      "quantity": 0
+    }
+  ]
+}

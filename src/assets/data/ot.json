@@ -1,0 +1,721 @@
+{
+  "jobs": [
+    {
+      "user_configurations_id": 10,
+      "companies_id": 1,
+      "locations_id": 1,
+      "jobs_id": 848,
+      "job_sequence": null,
+      "job_legacy_code": null,
+      "job_schedule_date": "2019-03-22 00:00:00",
+      "job_turn": null,
+      "job_tag": null,
+      "job_alert": null,
+      "job_item_list": null,
+      "job_updated_at": "2019-03-22 15:47:02",
+      "customers_id": 61,
+      "suppliers_id": 1,
+      "services_id": 1,
+      "service_name": "Preventivo - Bin de Hielo",
+      "origen_entity_id": null,
+      "origen_entity_code": null,
+      "origen_entity_name": null,
+      "origen_entity_info": null,
+      "origen_entity_taxpayer_code": null,
+      "origen_entity_taxpayer_info": null,
+      "origen_code": null,
+      "origen_name": null,
+      "origen_info": null,
+      "origen_address": null,
+      "origen_reference": null,
+      "origen_latitude": null,
+      "origen_longitude": null,
+      "origen_observations": null,
+      "origen_contact_fullname": null,
+      "origen_contact_job_title": null,
+      "origen_contact_telephone": null,
+      "destination_entity_id": 61,
+      "destination_entity_code": null,
+      "destination_entity_name": "CASINO CARRERA",
+      "destination_entity_info": "CASINO CARRERA",
+      "destination_entity_taxpayer_code": null,
+      "destination_entity_taxpayer_info": null,
+      "destination_code": null,
+      "destination_name": "CASINO CARRERA",
+      "destination_info": "CASINO CARRERA",
+      "destination_address": "AV. ARENALES 1814A - LINCE",
+      "destination_reference": null,
+      "destination_latitude": null,
+      "destination_longitude": null,
+      "destination_observations": null,
+      "destination_contact_fullname": null,
+      "destination_contact_job_title": null,
+      "destination_contact_telephone": null,
+      "product_name": "Bin de Hielo: 1101191730; ",
+      "actual_job_status_id": 3942,
+      "actual_status_colour": "#488fd0",
+      "actual_status_sequence": 1,
+      "actual_status_name": "Pendiente"
+    },
+    {
+      "user_configurations_id": 10,
+      "companies_id": 1,
+      "locations_id": 1,
+      "jobs_id": 849,
+      "job_sequence": null,
+      "job_legacy_code": null,
+      "job_schedule_date": "2019-03-22 00:00:00",
+      "job_turn": null,
+      "job_tag": null,
+      "job_alert": null,
+      "job_item_list": null,
+      "job_updated_at": "2019-03-22 15:47:51",
+      "customers_id": 61,
+      "suppliers_id": 1,
+      "services_id": 5,
+      "service_name": "Correctivo - Post Mix",
+      "origen_entity_id": null,
+      "origen_entity_code": null,
+      "origen_entity_name": null,
+      "origen_entity_info": null,
+      "origen_entity_taxpayer_code": null,
+      "origen_entity_taxpayer_info": null,
+      "origen_code": null,
+      "origen_name": null,
+      "origen_info": null,
+      "origen_address": null,
+      "origen_reference": null,
+      "origen_latitude": null,
+      "origen_longitude": null,
+      "origen_observations": null,
+      "origen_contact_fullname": null,
+      "origen_contact_job_title": null,
+      "origen_contact_telephone": null,
+      "destination_entity_id": 61,
+      "destination_entity_code": null,
+      "destination_entity_name": "CASINO CARRERA",
+      "destination_entity_info": "CASINO CARRERA",
+      "destination_entity_taxpayer_code": null,
+      "destination_entity_taxpayer_info": null,
+      "destination_code": null,
+      "destination_name": "CASINO CARRERA",
+      "destination_info": "CASINO CARRERA",
+      "destination_address": "AV. ARENALES 1814A - LINCE",
+      "destination_reference": null,
+      "destination_latitude": null,
+      "destination_longitude": null,
+      "destination_observations": null,
+      "destination_contact_fullname": null,
+      "destination_contact_job_title": null,
+      "destination_contact_telephone": null,
+      "product_name": "Productora de hielo: 1101190124; ",
+      "actual_job_status_id": 3943,
+      "actual_status_colour": "#488fd0",
+      "actual_status_sequence": 1,
+      "actual_status_name": "Pendiente"
+    }
+  ],
+  "services": [
+    {
+      "services_id": 1,
+      "service_name": "Preventivo - Bin de Hielo",
+      "statuses": [
+        {
+          "statuses_id": 1,
+          "sequence": 1,
+          "color": "#488fd0",
+          "name": "Pendiente",
+          "is_failed": 0,
+          "can_fail": 0,
+          "is_completed": 0,
+          "service_statuses_id": 1,
+          "has_info_request": "0",
+          "templates_id": null
+        },
+        {
+          "statuses_id": 2,
+          "sequence": 2,
+          "color": "#a568d2",
+          "name": "En camino",
+          "is_failed": 0,
+          "can_fail": 1,
+          "is_completed": 0,
+          "service_statuses_id": 2,
+          "has_info_request": "0",
+          "templates_id": null
+        },
+        {
+          "statuses_id": 3,
+          "sequence": 3,
+          "color": "#ffd757",
+          "name": "En destino",
+          "is_failed": 0,
+          "can_fail": 1,
+          "is_completed": 0,
+          "service_statuses_id": 3,
+          "has_info_request": "0",
+          "templates_id": null
+        },
+        {
+          "statuses_id": 4,
+          "sequence": 4,
+          "color": "#00d661",
+          "name": "Completado",
+          "is_failed": 0,
+          "can_fail": 1,
+          "is_completed": 1,
+          "service_statuses_id": 4,
+          "has_info_request": "1",
+          "templates_id": 1
+        },
+        {
+          "statuses_id": 5,
+          "sequence": 99,
+          "color": "#ff3333",
+          "name": "Fallido",
+          "is_failed": 1,
+          "can_fail": 0,
+          "is_completed": 1,
+          "service_statuses_id": 5,
+          "has_info_request": "1",
+          "templates_id": null
+        }
+      ]
+    },
+    {
+      "services_id": 5,
+      "service_name": "Correctivo - Post Mix",
+      "statuses": [
+        {
+          "statuses_id": 1,
+          "sequence": 1,
+          "color": "#488fd0",
+          "name": "Pendiente",
+          "is_failed": 0,
+          "can_fail": 0,
+          "is_completed": 0,
+          "service_statuses_id": 21,
+          "has_info_request": "0",
+          "templates_id": null
+        },
+        {
+          "statuses_id": 2,
+          "sequence": 2,
+          "color": "#a568d2",
+          "name": "En camino",
+          "is_failed": 0,
+          "can_fail": 1,
+          "is_completed": 0,
+          "service_statuses_id": 22,
+          "has_info_request": "0",
+          "templates_id": null
+        },
+        {
+          "statuses_id": 3,
+          "sequence": 3,
+          "color": "#ffd757",
+          "name": "En destino",
+          "is_failed": 0,
+          "can_fail": 1,
+          "is_completed": 0,
+          "service_statuses_id": 23,
+          "has_info_request": "0",
+          "templates_id": null
+        },
+        {
+          "statuses_id": 4,
+          "sequence": 4,
+          "color": "#00d661",
+          "name": "Completado",
+          "is_failed": 0,
+          "can_fail": 1,
+          "is_completed": 1,
+          "service_statuses_id": 24,
+          "has_info_request": "1",
+          "templates_id": 1
+        },
+        {
+          "statuses_id": 5,
+          "sequence": 99,
+          "color": "#ff3333",
+          "name": "Fallido",
+          "is_failed": 1,
+          "can_fail": 0,
+          "is_completed": 1,
+          "service_statuses_id": 25,
+          "has_info_request": "1",
+          "templates_id": null
+        }
+      ]
+    }
+  ],
+  "info_request": [
+    {
+      "service_statuses_id": 4,
+      "info_request_sequences_id": 1,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 1,
+      "domains_id": 8,
+      "domains_name": "Survey",
+      "info_request_updated_at": "2019-03-08T02:16:12.000Z"
+    },
+    {
+      "service_statuses_id": 4,
+      "info_request_sequences_id": 2,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 2,
+      "domains_id": 7,
+      "domains_name": "Survey",
+      "info_request_updated_at": "2019-03-08T02:16:12.000Z"
+    },
+    {
+      "service_statuses_id": 4,
+      "info_request_sequences_id": 3,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 3,
+      "domains_id": 26,
+      "domains_name": "Evidence Configuration",
+      "info_request_updated_at": "2019-03-08T02:16:12.000Z"
+    },
+    {
+      "service_statuses_id": 4,
+      "info_request_sequences_id": 4,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 4,
+      "domains_id": 25,
+      "domains_name": "Digital Signature",
+      "info_request_updated_at": "2019-03-08T02:16:13.000Z"
+    },
+    {
+      "service_statuses_id": 5,
+      "info_request_sequences_id": 5,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 1,
+      "domains_id": 6,
+      "domains_name": "Survey",
+      "info_request_updated_at": "2019-03-08T02:16:13.000Z"
+    },
+    {
+      "service_statuses_id": 24,
+      "info_request_sequences_id": 21,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 1,
+      "domains_id": 12,
+      "domains_name": "Survey",
+      "info_request_updated_at": "2019-03-08T02:16:17.000Z"
+    },
+    {
+      "service_statuses_id": 24,
+      "info_request_sequences_id": 22,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 2,
+      "domains_id": 7,
+      "domains_name": "Survey",
+      "info_request_updated_at": "2019-03-08T02:16:18.000Z"
+    },
+    {
+      "service_statuses_id": 24,
+      "info_request_sequences_id": 23,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 3,
+      "domains_id": 26,
+      "domains_name": "Evidence Configuration",
+      "info_request_updated_at": "2019-03-08T02:16:18.000Z"
+    },
+    {
+      "service_statuses_id": 24,
+      "info_request_sequences_id": 24,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 4,
+      "domains_id": 25,
+      "domains_name": "Digital Signature",
+      "info_request_updated_at": "2019-03-08T02:16:18.000Z"
+    },
+    {
+      "service_statuses_id": 25,
+      "info_request_sequences_id": 25,
+      "info_request_group_sequence": 1,
+      "info_request_sequence": 1,
+      "domains_id": 6,
+      "domains_name": "Survey",
+      "info_request_updated_at": "2019-03-08T02:16:19.000Z"
+    }
+  ],
+  "surveys": [
+    {
+      "domains_id": 6,
+      "domain_name": "Motivo de fallo",
+      "groups": [
+        {
+          "group_sequence": 1,
+          "group_name": "Información General",
+          "attributes": [
+            {
+              "domain_attributes_id": 1,
+              "attributes_id": 1,
+              "widget_type": "RadioGroup",
+              "include_others": 1,
+              "attributes_sequence": 1,
+              "attributes_name": "Seleccione el motivo",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "1"
+            },
+            {
+              "domain_attributes_id": 1,
+              "attributes_id": 1,
+              "widget_type": "RadioGroup",
+              "include_others": 1,
+              "attributes_sequence": 1,
+              "attributes_name": "Seleccione el motivo",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "domains_id": 7,
+      "domain_name": "Datos de cliente",
+      "groups": [
+        {
+          "group_sequence": 1,
+          "group_name": "Información General",
+          "attributes": [
+            {
+              "domain_attributes_id": 2,
+              "attributes_id": 2,
+              "widget_type": "TextView",
+              "include_others": 0,
+              "attributes_sequence": 1,
+              "attributes_name": "Nombres",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            },
+            {
+              "domain_attributes_id": 2,
+              "attributes_id": 2,
+              "widget_type": "TextView",
+              "include_others": 0,
+              "attributes_sequence": 1,
+              "attributes_name": "Nombres",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            },
+            {
+              "domain_attributes_id": 3,
+              "attributes_id": 3,
+              "widget_type": "TextView",
+              "include_others": 0,
+              "attributes_sequence": 2,
+              "attributes_name": "Apellidos",
+              "attributes_is_mandatory": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            },
+            {
+              "domain_attributes_id": 3,
+              "attributes_id": 3,
+              "widget_type": "TextView",
+              "include_others": 0,
+              "attributes_sequence": 2,
+              "attributes_name": "Apellidos",
+              "attributes_is_mandatory": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            },
+            {
+              "domain_attributes_id": 4,
+              "attributes_id": 4,
+              "widget_type": "TextView",
+              "include_others": 0,
+              "attributes_sequence": 3,
+              "attributes_name": "Cargo",
+              "attributes_is_mandatory": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            },
+            {
+              "domain_attributes_id": 4,
+              "attributes_id": 4,
+              "widget_type": "TextView",
+              "include_others": 0,
+              "attributes_sequence": 3,
+              "attributes_name": "Cargo",
+              "attributes_is_mandatory": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            },
+            {
+              "domain_attributes_id": 5,
+              "attributes_id": 5,
+              "widget_type": "TextView",
+              "include_others": 0,
+              "attributes_sequence": 4,
+              "attributes_name": "Correo",
+              "attributes_is_mandatory": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "domains_id": 8,
+      "domain_name": "EWO: Preventivo Bin",
+      "groups": [
+        {
+          "group_sequence": 1,
+          "group_name": "Información General",
+          "attributes": [
+            {
+              "domain_attributes_id": 8,
+              "attributes_id": 8,
+              "widget_type": "RadioGroup",
+              "include_others": 1,
+              "attributes_sequence": 1,
+              "attributes_name": "Información de ubicación del cliente exacta?",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "1"
+            },
+            {
+              "domain_attributes_id": 9,
+              "attributes_id": 9,
+              "widget_type": "RadioGroup",
+              "include_others": 1,
+              "attributes_sequence": 2,
+              "attributes_name": "Información de ubicación del equipo exacta?",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "1"
+            },
+            {
+              "domain_attributes_id": 10,
+              "attributes_id": 10,
+              "widget_type": "RadioGroup",
+              "include_others": 0,
+              "attributes_sequence": 3,
+              "attributes_name": "Estado del trabajo",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "1"
+            },
+            {
+              "domain_attributes_id": 11,
+              "attributes_id": 11,
+              "widget_type": "RadioGroup",
+              "include_others": 0,
+              "attributes_sequence": 4,
+              "attributes_name": "Visita",
+              "attributes_is_mandatory": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "1"
+            },
+            {
+              "domain_attributes_id": 12,
+              "attributes_id": 7,
+              "widget_type": "Multiline Text",
+              "include_others": 0,
+              "attributes_sequence": 5,
+              "attributes_name": "Observaciones",
+              "attributes_is_mandatory": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            }
+          ]
+        },
+        {
+          "group_sequence": 2,
+          "group_name": "Refacciones/Partes",
+          "attributes": [
+            {
+              "domain_attributes_id": 13,
+              "attributes_id": 12,
+              "widget_type": "Multiline Text",
+              "include_others": 0,
+              "attributes_sequence": 1,
+              "attributes_name": "Refacciones/Partes (Indique las cantidades)",
+              "attributes_is_mandatory": 0,
+              "attribute_types_id": 1,
+              "attribute_type_name": "String",
+              "has_selection": "0"
+            }
+          ]
+        },
+        {
+          "group_sequence": 3,
+          "group_name": "Hoja de condiciones del equipo",
+          "attributes": [
+            {
+              "domain_attributes_id": 14,
+              "attributes_id": 13,
+              "widget_type": "RadioGroup",
+              "include_others": 0,
+              "attributes_sequence": 1,
+              "attributes_name": "Limpieza",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 3,
+              "attribute_type_name": "Numeric",
+              "has_selection": "1"
+            },
+            {
+              "domain_attributes_id": 15,
+              "attributes_id": 14,
+              "widget_type": "RadioGroup",
+              "include_others": 0,
+              "attributes_sequence": 2,
+              "attributes_name": "Daño",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 3,
+              "attribute_type_name": "Numeric",
+              "has_selection": "1"
+            },
+            {
+              "domain_attributes_id": 16,
+              "attributes_id": 15,
+              "widget_type": "RadioGroup",
+              "include_others": 0,
+              "attributes_sequence": 3,
+              "attributes_name": "Merchandising / Calcamanía",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 3,
+              "attribute_type_name": "Numeric",
+              "has_selection": "1"
+            },
+            {
+              "domain_attributes_id": 17,
+              "attributes_id": 16,
+              "widget_type": "RadioGroup",
+              "include_others": 0,
+              "attributes_sequence": 4,
+              "attributes_name": "Iluminación",
+              "attributes_is_mandatory": 1,
+              "attribute_types_id": 3,
+              "attribute_type_name": "Numeric",
+              "has_selection": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "attribute_values": [
+    {
+      "attributes_id": 1,
+      "values": [
+        {
+          "code": "Local cerrado",
+          "value": "Local cerrado",
+          "sequence": 1
+        },
+        {
+          "code": " Dirección incorrecta",
+          "value": " Dirección incorrecta",
+          "sequence": 2
+        },
+        {
+          "code": " Cliente no acepta servicio",
+          "value": " Cliente no acepta servicio",
+          "sequence": 3
+        }
+      ]
+    },
+    {
+      "attributes_id": 8,
+      "values": [
+        {
+          "code": "Sí",
+          "value": "Sí",
+          "sequence": 1
+        },
+        {
+          "code": "No",
+          "value": "No",
+          "sequence": 2
+        }
+      ]
+    },
+    {
+      "attributes_id": 9,
+      "values": [
+        {
+          "code": "Sí",
+          "value": "Sí",
+          "sequence": 1
+        },
+        {
+          "code": "No",
+          "value": "No",
+          "sequence": 2
+        }
+      ]
+    },
+    {
+      "attributes_id": 10,
+      "values": [
+        {
+          "code": "Completo",
+          "value": "Completo",
+          "sequence": 1
+        },
+        {
+          "code": " Incompleto - Necesita ayuda",
+          "value": " Incompleto - Necesita ayuda",
+          "sequence": 2
+        },
+        {
+          "code": " Incompleto - Tienda cerrada",
+          "value": " Incompleto - Tienda cerrada",
+          "sequence": 3
+        },
+        {
+          "code": " Incompleto - Necesita refracción",
+          "value": " Incompleto - Necesita refracción",
+          "sequence": 4
+        },
+        {
+          "code": " Incompleto - Tienda no lista",
+          "value": " Incompleto - Tienda no lista",
+          "sequence": 5
+        },
+        {
+          "code": " Incompleto - Otros",
+          "value": " Incompleto - Otros",
+          "sequence": 6
+        }
+      ]
+    }
+  ],
+  "evidence_configurations": [
+    {
+      "domains_id": 25,
+      "domains_name": "Firma",
+      "quantity": 1
+    },
+    {
+      "domains_id": 26,
+      "domains_name": "Equipo",
+      "quantity": 0
+    }
+  ]
+}
