@@ -11,9 +11,32 @@ import { StatusBar } from "@ionic-native/status-bar/ngx";
 export class AppComponent {
   public appPages = [
     {
-      title: "Home",
+      title: "OTs Pendientes",
+      url: "/ots-pendientes",
+      icon: "briefcase"
+    },
+    {
+      title: "OTs Programadas",
       url: "/home",
-      icon: "home"
+      icon: "search"
+    },
+    {
+      title: "Sincronizar",
+      url: "/home",
+      icon: "refresh"
+    }
+  ];
+
+  public opcionesPage = [
+    {
+      title: "Salir",
+      url: "/ots-pendientes",
+      icon: "exit"
+    },
+    {
+      title: "Versión",
+      url: "/home",
+      icon: "phone-portrait"
     }
   ];
 
