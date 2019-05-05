@@ -13,12 +13,13 @@ export class ConnectionService {
   constructor(private http: HTTP) {}
 
   get(ruta) {
+    let options = {
+      headers: { Authorization: "Bearer " + this.token }
+    };
     return this.http.get(
       rutaAPI + ruta,
       {},
-      '{"Content-Type": "application/json", "Authorization": "Bearer "' +
-        this.token +
-        "}"
+      { Authorization: "Bearer " + this.token }
     );
   }
 

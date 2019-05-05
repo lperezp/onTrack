@@ -7,7 +7,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./ots-pendientes.page.scss"]
 })
 export class OtsPendientesPage implements OnInit {
+  data: any;
   constructor(private otsService: OtsPendientesService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getOTSPendientes();
+  }
+
+  getOTSPendientes() {
+    this.otsService.getOTSPendientes().then(data => {
+      this.data = JSON.parse(data.data);
+      console.log("Resultado", this.data);
+    });
+  }
 }

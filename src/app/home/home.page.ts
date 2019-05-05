@@ -1,6 +1,7 @@
 import { ConnectionService } from "./../services/connection/connection.service";
 import { Component } from "@angular/core";
 import { UuidService } from "../services/uuid/uuid.service";
+import { NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-home",
@@ -12,7 +13,8 @@ export class HomePage {
   appName: string;
   constructor(
     private uuidService: UuidService,
-    private connectionService: ConnectionService
+    private connectionService: ConnectionService,
+    private NavCtrl: NavController
   ) {
     this.uuid = this.uuidService.uuid;
     this.appName = "OnTrack";
@@ -25,6 +27,9 @@ export class HomePage {
     this.connectionService.getToken(this.uuid, this.appName).then(data => {
       this.connectionService.token = JSON.parse(data.data);
       console.log("Token", this.connectionService.token.token);
+      /*  if (this.connectionService.token.token != null) { */
+      this.NavCtrl.navigateForward("/ots-pendientes");
+      /* } */
     });
   }
 }
