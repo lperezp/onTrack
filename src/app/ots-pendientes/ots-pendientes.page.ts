@@ -8,6 +8,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class OtsPendientesPage implements OnInit {
   data: any;
+  jobs: any;
   constructor(private otsService: OtsPendientesService) {}
 
   ngOnInit() {
@@ -18,6 +19,8 @@ export class OtsPendientesPage implements OnInit {
     this.otsService.getOTSPendientes().then(data => {
       this.data = JSON.parse(data.data);
       console.log("Resultado", this.data);
+      this.jobs = this.data["jobs"];
+      console.log(this.jobs);
     });
   }
 }

@@ -9,6 +9,8 @@ export class OtsPendientesService {
 
   getOTSPendientes() {
     //VERIFICAR EL ID DE CONFIGURACION  <============================
-    return this.connectionService.get("jobs/search?userConfigurationIdList=4");
+    return this.connectionService.get(
+      "jobs/search?userConfigurationIdList=15,4"
+    );
   }
 }

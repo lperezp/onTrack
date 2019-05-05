@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card
+  <!-- <ion-card
     style="border-left: 5px solid"
     [ngStyle]="{ 'border-left-color': red }"
   >
@@ -24,6 +24,27 @@
       <p>AV. GRAU 179</p>
       <p class="font-weight-bold">Preventivo - Bin de Hielo</p>
       <p>Bin de Hielo: 1101191790</p>
+    </ion-card-content>
+  </ion-card> -->
+  <ion-card
+    *ngFor="let item of jobs"
+    color="gris"
+    style="border-left: 5px solid"
+    [ngStyle]="{ 'border-left-color': item.actual_status_colour }"
+  >
+    <!-- (click)="openSelectedClientePage(item)" -->
+    <ion-card-content>
+      <p>
+        ID: #{{ item.jobs_id
+        }}<span class="estado font-weight-bold text-right">{{
+          item.actual_status_name
+        }}</span>
+      </p>
+      <small>{{ item.job_updated_at | slice: 0:10 }}</small>
+      <p class="font-weight-bold">{{ item.destination_entity_name }}</p>
+      <p>{{ item.destination_address }}</p>
+      <p class="font-weight-bold">{{ item.service_name }}</p>
+      <p>{{ item.product_name }}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
