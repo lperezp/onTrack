@@ -19,11 +19,8 @@
     UUID: {{ uuid }}
   </p>
   <p>{{ respuesta }}</p>
-  <ion-button
-    style="height:50px;width: 100%"
-    color="primary"
-    [routerLink]="['/ots-pendientes']"
-  >
+  <ion-button style="height:50px;width: 100%" color="primary" (click)="Login()">
+    <!--  [routerLink]="['/ots-pendientes']" -->
     INICIAR SESIÓN
   </ion-button>
 </ion-content>
