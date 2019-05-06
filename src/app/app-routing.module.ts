@@ -25,7 +25,8 @@ const routes: Routes = [
   { path: 'fallo', loadChildren: './fallo/fallo.module#FalloPageModule' },
   { path: 'survey-fallo', loadChildren: './survey-fallo/survey-fallo.module#SurveyFalloPageModule' },
   { path: 'survey-check', loadChildren: './survey-check/survey-check.module#SurveyCheckPageModule' },
-  { path: 'ewo', loadChildren: './ewo/ewo.module#EwoPageModule' }
+  { path: 'ewo', loadChildren: './ewo/ewo.module#EwoPageModule' },
+  { path: 'datos-cliente', loadChildren: './datos-cliente/datos-cliente.module#DatosClientePageModule' }
 ];
 
 @NgModule({
