@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, Renderer } from "@angular/core";
 import { Platform } from "@ionic/angular";
 
+import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx";
+
 @Component({
   selector: "app-firma",
   templateUrl: "./firma.page.html",
@@ -13,16 +15,22 @@ export class FirmaPage implements OnInit {
   lastY: number;
 
   currentColour: string = "black";
-  brushSize: number = 4;
+  brushSize: number = 2;
 
-  constructor(public platform: Platform, public renderer: Renderer) {}
+  constructor(
+    public platform: Platform,
+    public renderer: Renderer,
+    private screenOrientation: ScreenOrientation
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+  }
 
   ngAfterViewInit() {
     this.canvasElement = this.canvas.nativeElement;
 
-    this.renderer.setElementAttribute(
+    /*    this.renderer.setElementAttribute(
       this.canvasElement,
       "width",
       this.platform.width() + ""
@@ -31,7 +39,7 @@ export class FirmaPage implements OnInit {
       this.canvasElement,
       "height",
       this.platform.height() + ""
-    );
+    ); */
   }
 
   handleStart(ev) {

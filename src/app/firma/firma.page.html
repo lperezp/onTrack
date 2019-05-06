@@ -8,9 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <canvas
-    #myCanvas
-    (touchstart)="handleStart($event)"
-    (touchmove)="handleMove($event)"
-  ></canvas>
+  <div>
+    <canvas
+      style="min-height: 100vh;min-width: 100vw;"
+      #myCanvas
+      (touchstart)="handleStart($event)"
+      (touchmove)="handleMove($event)"
+    ></canvas>
+  </div>
 </ion-content>

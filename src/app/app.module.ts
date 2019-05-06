@@ -15,6 +15,9 @@ import { Device } from "@ionic-native/device/ngx";
 // IMPORT PLUGIN NATIVE OF REST API
 import { HTTP } from "@ionic-native/http/ngx";
 
+// IMPORT PLUGIN NATIVE SCREEN ORIENTATION
+import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,6 +27,7 @@ import { HTTP } from "@ionic-native/http/ngx";
     SplashScreen,
     Device,
     HTTP,
+    ScreenOrientation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
