@@ -17,7 +17,7 @@ import { HTTP } from "@ionic-native/http/ngx";
 
 // IMPORT PLUGIN NATIVE SCREEN ORIENTATION
 import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx";
-
+import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,6 +28,7 @@ import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx";
     Device,
     HTTP,
     ScreenOrientation,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
