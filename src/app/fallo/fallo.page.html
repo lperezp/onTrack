@@ -15,8 +15,9 @@
     *ngFor="let item of surveys; index as i"
     color="secondary"
     expand="full"
-    [routerLink]="['/survey-fallo']"
+    (click)="openSurvey(item)"
     >LLENAR {{ surveys[i].domain_name | uppercase }}</ion-button
   >
   <ion-button color="secondary">GRABAR</ion-button>
+  <div [innerHTML]="result"></div>
 </ion-content>
