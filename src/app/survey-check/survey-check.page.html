@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <!-- <ion-back-button defaultHref="/ots-pendientes"></ion-back-button> -->
+      </ion-buttons>
+      <ion-title>OnTrack</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-text color="secondary">
+      <h4 class="text-secondary">Formularios</h4>
+    </ion-text>
+    <ion-button *ngFor="let item of text; index as i"  color="secondary" expand="full" [routerLink]="['/survey-fallo']">LLENAR {{text[i+1].domain_name | uppercase}}</ion-button>
+    <ion-text color="secondary">
+        <h4 class="text-h4">Evidencias</h4>
+      </ion-text>
+      <ion-text color="secondary">
+          <h4 class="text-h4">Conformidad del Cliente</h4>
+        </ion-text>
+        <ion-button color="secondary">Grabar</ion-button>
+  </ion-content>
+  
