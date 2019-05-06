@@ -15,6 +15,12 @@ const routes: Routes = [
     path: "ots-pendientes",
     loadChildren:
       "./ots-pendientes/ots-pendientes.module#OtsPendientesPageModule"
+  },
+  {
+    path:
+      "detalle/:jobs_id/:destination_name/:destination_address/:destination_entity_info/:service_name/:product_name",
+    loadChildren:
+      "./detalle-cliente/detalle-cliente.module#DetalleClientePageModule"
   }
 ];
 

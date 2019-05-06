@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title># ID</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="text-center estado">
+    <h5 class="font-weight-bold text-secondary">
+      Completado
+    </h5>
+    <div class="row" style="margin: 25px 0px">
+      <div class="col" style="top:-9px">
+        <div class="circle"></div>
+      </div>
+      <div class="col">
+        <div style="border-top: 3px solid; border-top-color:#109eec"></div>
+      </div>
+      <div class="col" style="top:-9px">
+        <div class="circle"></div>
+      </div>
+      <div class="col">
+        <div style="border-top: 3px solid; border-top-color:#109eec"></div>
+      </div>
+      <div class="col" style="top:-9px">
+        <div class="circle"></div>
+      </div>
+      <div class="col">
+        <div style="border-top: 3px solid; border-top-color:#109eec"></div>
+      </div>
+      <div class="col" style="top:-9px">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  <h4 class="text-secondary underline">Destino</h4>
+  <div class="destino">
+    <h6 class="font-weight-bold">{{ cliente.destination_name }}</h6>
+    <h6>{{ cliente.destination_address }}</h6>
+    <h6>{{ cliente.destination_entity_info }}</h6>
+    <h4 class="text-secondary underline">Producto</h4>
+    <h6 class="font-weight-bold">{{ cliente.service_name }}</h6>
+    <h6>{{ cliente.product_name }}</h6>
+  </div>
+  <div class="row footer">
+    <div class="col text-center" (click)="openBack()">
+      <p class="text-button font-weight-bold">Atrás</p>
+    </div>
+    <div class="col text-center" (click)="getCamera()">
+      <ion-icon name="camera" color="secondary"></ion-icon>
+    </div>
+    <div class="col text-center" (click)="openDetalleCliente()">
+      <p class="text-button font-weight-bold">Siguiente</p>
+    </div>
+  </div>
+</ion-content>

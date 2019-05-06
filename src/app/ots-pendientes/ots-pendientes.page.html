@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>
       OTs Pendientes
@@ -15,6 +15,7 @@
     style="border-left: 5px solid"
     [ngStyle]="{ 'border-left-color': item.actual_status_colour }"
     color="medium"
+    (click)="selectedOT(item)"
   >
     <ion-card-content>
       <p>
