@@ -11,5 +11,12 @@
   <ion-text color="secondary">
     <h4 class="text-secondary">Formularios</h4>
   </ion-text>
-  <ion-button color="secondary" expand="full" [routerLink]="['/survey-fallo']">LLENAR {{text | uppercase}}</ion-button>
+  <ion-button
+    *ngFor="let item of surveys; index as i"
+    color="secondary"
+    expand="full"
+    [routerLink]="['/survey-fallo']"
+    >LLENAR {{ surveys[i].domain_name | uppercase }}</ion-button
+  >
+  <ion-button color="secondary">GRABAR</ion-button>
 </ion-content>

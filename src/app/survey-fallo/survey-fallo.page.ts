@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { OtsPendientesService } from '../services/ots/ots-pendientes/ots-pendientes.service';
+import { Component, OnInit } from "@angular/core";
+import { OtsPendientesService } from "../services/ots/ots-pendientes/ots-pendientes.service";
 
 @Component({
-  selector: 'app-survey-fallo',
-  templateUrl: './survey-fallo.page.html',
-  styleUrls: ['./survey-fallo.page.scss'],
+  selector: "app-survey-fallo",
+  templateUrl: "./survey-fallo.page.html",
+  styleUrls: ["./survey-fallo.page.scss"]
 })
 export class SurveyFalloPage implements OnInit {
   data: any;
@@ -15,7 +15,7 @@ export class SurveyFalloPage implements OnInit {
   widget_type: any;
   tipoInput: string = "";
 
-  constructor(private otsService: OtsPendientesService) { }
+  constructor(private otsService: OtsPendientesService) {}
 
   ngOnInit() {
     this.getSurveyFail();
@@ -35,16 +35,6 @@ export class SurveyFalloPage implements OnInit {
       console.log(this.attributes_id);
       console.log(this.widget_type);
       console.log(this.attribute_values);
-      switch(this.widget_type){
-        case "RadioGroup":
-        for(let i =0;i < this.attribute_values[0].values.length;i++ ){
-          let type = "";
-            type = `<input type='radio' value=${this.attribute_values[0].values[i].value} />`
-            let label;
-            label = `<label>${this.attribute_values[0].values[i].code}</label><br>`;
-            this.tipoInput = this.tipoInput + type + label;
-        }
-      }
     });
   }
 }
