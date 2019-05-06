@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { OtsPendientesService } from "../services/ots/ots-pendientes/ots-pendientes.service";
+import { Component, OnInit } from '@angular/core';
+import { OtsPendientesService } from '../services/ots/ots-pendientes/ots-pendientes.service';
 
 @Component({
-  selector: "app-fallo",
-  templateUrl: "./fallo.page.html",
-  styleUrls: ["./fallo.page.scss"]
+  selector: 'app-surveys',
+  templateUrl: './surveys.page.html',
+  styleUrls: ['./surveys.page.scss'],
 })
-export class FalloPage implements OnInit {
+export class SurveysPage implements OnInit {
   data: any;
   surveys: any;
   text: any;
