@@ -1,14 +1,16 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title># ID</ion-title>
+    <ion-title># {{ cliente.jobs_id }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <div class="text-center estado">
-    <h5 class="font-weight-bold text-secondary">
-      Completado
-    </h5>
+    <ion-text color="secondary">
+      <h5 class="font-weight-bold">
+        Completado
+      </h5>
+    </ion-text>
     <div class="row" style="margin: 25px 0px">
       <div class="col" style="top:-9px">
         <div class="circle"></div>
@@ -33,24 +35,30 @@
       </div>
     </div>
   </div>
-  <h4 class="text-secondary underline">Destino</h4>
+  <h4 class="text-secondary underline" color="secondary">Destino</h4>
   <div class="destino">
-    <h6 class="font-weight-bold">{{ cliente.destination_name }}</h6>
-    <h6>{{ cliente.destination_address }}</h6>
-    <h6>{{ cliente.destination_entity_info }}</h6>
-    <h4 class="text-secondary underline">Producto</h4>
-    <h6 class="font-weight-bold">{{ cliente.service_name }}</h6>
-    <h6>{{ cliente.product_name }}</h6>
+    <ion-text color="dark">
+      <h6 class="font-weight-bold">{{ cliente.destination_name }}</h6>
+    </ion-text>
+    <ion-text color="dark">
+      <h6>{{ cliente.destination_address }}</h6>
+      <h6>{{ cliente.destination_entity_info }}</h6>
+    </ion-text>
+    <h4 class="text-secondary underline" color="secondary">Producto</h4>
+    <ion-text color="dark">
+      <h6 class="font-weight-bold">{{ cliente.service_name }}</h6>
+      <h6>{{ cliente.product_name }}</h6>
+    </ion-text>
   </div>
   <div class="row footer">
     <div class="col text-center" (click)="openBack()">
-      <p class="text-button font-weight-bold">Atrás</p>
+      <ion-icon name="close" color="secondary"></ion-icon>
     </div>
     <div class="col text-center" (click)="getCamera()">
       <ion-icon name="camera" color="secondary"></ion-icon>
     </div>
     <div class="col text-center" (click)="openDetalleCliente()">
-      <p class="text-button font-weight-bold">Siguiente</p>
+      <ion-icon name="checkmark" color="secondary"></ion-icon>
     </div>
   </div>
 </ion-content>
