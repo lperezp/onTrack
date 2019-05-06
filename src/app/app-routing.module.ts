@@ -22,7 +22,8 @@ const routes: Routes = [
     loadChildren:
       "./detalle-cliente/detalle-cliente.module#DetalleClientePageModule"
   },
-  { path: 'fallo', loadChildren: './fallo/fallo.module#FalloPageModule' }
+  { path: 'fallo', loadChildren: './fallo/fallo.module#FalloPageModule' },
+  { path: 'survey-fallo', loadChildren: './survey-fallo/survey-fallo.module#SurveyFalloPageModule' }
 ];
 
 @NgModule({
