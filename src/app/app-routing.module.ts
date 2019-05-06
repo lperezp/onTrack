@@ -21,7 +21,8 @@ const routes: Routes = [
       "detalle/:jobs_id/:destination_name/:destination_address/:destination_entity_info/:service_name/:product_name",
     loadChildren:
       "./detalle-cliente/detalle-cliente.module#DetalleClientePageModule"
-  }
+  },
+  { path: 'fallo', loadChildren: './fallo/fallo.module#FalloPageModule' }
 ];
 
 @NgModule({
