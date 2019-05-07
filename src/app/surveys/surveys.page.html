@@ -23,7 +23,10 @@
       </ion-text>
       <div *ngFor="let evidence of evidence_configurations; index as i" >
         <h4 class="text-detalle">{{ evidence_configurations[i].domains_name}}</h4>
-        <div class="box-img mr-2"></div>
+        <div class="box-img mr-2">
+            <img [src]="image" *ngIf="image" />
+        </div>
+        <ion-icon name="camera" color="secondary" class="max-icono" (click)="getCamera()"></ion-icon>
       </div>
     <ion-button color="secondary">GRABAR</ion-button>
   </ion-content>

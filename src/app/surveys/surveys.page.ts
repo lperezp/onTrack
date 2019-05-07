@@ -2,6 +2,7 @@ import { NavController } from "@ionic/angular";
 import { Component, OnInit } from "@angular/core";
 import { OtsPendientesService } from "../services/ots/ots-pendientes/ots-pendientes.service";
 import { Router } from "@angular/router";
+import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
 
 @Component({
   selector: "app-surveys",
@@ -16,9 +17,11 @@ export class SurveysPage implements OnInit {
   result: string = "";
   attribute_values: any;
   evidence_configurations: any;
+  image: string;
   constructor(
     private otsService: OtsPendientesService,
-    private router: Router
+    private router: Router,
+    private camera: Camera
   ) {
     this.result = "";
   }
@@ -106,5 +109,23 @@ export class SurveysPage implements OnInit {
       }
     }
     this.router.navigate(["surveys-detalle", this.result]);
+  }
+
+  getCamera() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    };
+
+    this.camera.getPicture(options).then(
+      imageData => {
+        this.image = "data:image/jpeg;base64," + imageData;
+      },
+      err => {
+        // Handle error
+      }
+    );
   }
 }
