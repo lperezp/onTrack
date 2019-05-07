@@ -17,9 +17,10 @@ import { HTTP } from "@ionic-native/http/ngx";
 
 // IMPORT PLUGIN NATIVE SCREEN ORIENTATION
 import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx";
-import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
+import { Camera } from "@ionic-native/camera/ngx";
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SafeHtmlPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [

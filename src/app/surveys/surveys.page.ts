@@ -33,22 +33,39 @@ export class SurveysPage implements OnInit {
   }
 
   openSurvey(elemento) {
+    let tipo ="";
     console.log("SURVEY", elemento);
     for (let i = 0; i < elemento.groups.length; i++) {
       for (let ii = 0; ii < elemento.groups[i].attributes.length; ii++) {
-        console.log(
-          "ATRIBUTOS_ID",
-          elemento.groups[i].attributes[ii].attributes_id
-        );
-        console.log(
-          "widget_type",
-          elemento.groups[i].attributes[ii].widget_type
-        );
+        console.log("ATRIBUTOS_ID",elemento.groups[i].attributes[ii].attributes_id);
+        console.log("widget_type",elemento.groups[i].attributes[ii].widget_type);
+        
+        
+        switch(elemento.groups[i].attributes[ii].widget_type){
+          case "RadioGroup":{
+            let t = "radio";
+            tipo = `<div><input typo="radio" /></div>`
+          break;
+          }
+          case 'TextView': {
+            let t = "text";
+            tipo = `<div><input [attr.type]=${t}/></div>`
+            break; 
+         }
+         case 'MultilineText': { 
+            tipo = `<div><textarea class="form-control form-control-sm"></textarea></div>` 
+            break; 
+         }
+         case 'CheckGroup': { 
+            let t = "radio";
+          tipo = `<div><input [attr.type]=${t}/></div>`
+            break; 
+         }
+        }
+      
         let label = "";
-        label = `<label>${
-          elemento.groups[i].attributes[ii].attributes_name
-        }</label><br>`;
-        this.result = this.result + label;
+        label = `<label>${elemento.groups[i].attributes[ii].attributes_name}</label><br>`;
+        this.result = this.result + label+ tipo;
       }
     }
     this.router.navigate([
