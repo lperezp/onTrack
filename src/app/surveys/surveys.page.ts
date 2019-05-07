@@ -15,6 +15,7 @@ export class SurveysPage implements OnInit {
   widget_type: any;
   result: string = "";
   attribute_values: any;
+  evidence_configurations: any;
   constructor(
     private otsService: OtsPendientesService,
     private router: Router
@@ -32,8 +33,8 @@ export class SurveysPage implements OnInit {
       this.data = JSON.parse(data.data);
       this.surveys = this.data["surveys"];
       this.attribute_values = this.data["attribute_values"];
-      console.log("atributos", this.attribute_values);
-      console.log("SIZE_atributos", this.attribute_values.length);
+      this.evidence_configurations = this.data["evidence_configurations"];
+      console.log(this.evidence_configurations);
     });
   }
 
@@ -44,19 +45,11 @@ export class SurveysPage implements OnInit {
     console.log("SURVEY", elemento);
     for (let i = 0; i < elemento.groups.length; i++) {
       for (let ii = 0; ii < elemento.groups[i].attributes.length; ii++) {
-        console.log(
-          "ATRIBUTOS_ID",
-          elemento.groups[i].attributes[ii].attributes_id
+        console.log("ATRIBUTOS_ID",elemento.groups[i].attributes[ii].attributes_id
         );
-        console.log(
-          "widget_type",
-          elemento.groups[i].attributes[ii].widget_type
-        );
+        console.log("widget_type",elemento.groups[i].attributes[ii].widget_type);
         for (let iii = 0; iii < this.attribute_values.length; iii++) {
-          if (
-            this.attribute_values[iii].attributes_id ==
-            elemento.groups[i].attributes[ii].attributes_id
-          ) {
+          if (this.attribute_values[iii].attributes_id == elemento.groups[i].attributes[ii].attributes_id) {
             console.log("Igual", this.attribute_values[iii].attributes_id);
             for (let c = 0; c < this.attribute_values[iii].values.length; c++) {
               console.log("valores", this.attribute_values[iii].values[c].code);
@@ -108,9 +101,7 @@ export class SurveysPage implements OnInit {
         }
 
         let label = "";
-        label = `<label>${
-          elemento.groups[i].attributes[ii].attributes_name
-        }</label><br>`;
+        label = `<label>${elemento.groups[i].attributes[ii].attributes_name}</label><br>`;
         this.result = this.result + label + tipo;
       }
     }
