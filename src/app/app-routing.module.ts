@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:"detalle/:jobs_id/:destination_name/:destination_address/:destination_entity_info/:service_name/:product_name",loadChildren:"./detalle-cliente/detalle-cliente.module#DetalleClientePageModule"},
   { path: 'firma', loadChildren: './firma/firma.module#FirmaPageModule' },
   { path: 'surveys', loadChildren: './surveys/surveys.module#SurveysPageModule' },
-  { path: 'surveys-detalle', loadChildren: './surveys-detalle/surveys-detalle.module#SurveysDetallePageModule' }
+  { path: 'surveys-detalle/:label', loadChildren: './surveys-detalle/surveys-detalle.module#SurveysDetallePageModule' }
 ];
 
 @NgModule({

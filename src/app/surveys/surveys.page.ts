@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { OtsPendientesService } from '../services/ots/ots-pendientes/ots-pendientes.service';
+import { NavController } from '@ionic/angular';
+import { Component, OnInit } from "@angular/core";
+import { OtsPendientesService } from "../services/ots/ots-pendientes/ots-pendientes.service";
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-surveys',
-  templateUrl: './surveys.page.html',
-  styleUrls: ['./surveys.page.scss'],
+  selector: "app-surveys",
+  templateUrl: "./surveys.page.html",
+  styleUrls: ["./surveys.page.scss"]
 })
 export class SurveysPage implements OnInit {
   data: any;
@@ -12,14 +14,14 @@ export class SurveysPage implements OnInit {
   text: any;
   attributes_id: any;
   widget_type: any;
-  result: string ="";
-  constructor(private otsService: OtsPendientesService) {}
+  result: string = "";
+  constructor(private otsService: OtsPendientesService, private router: Router) {}
 
   ngOnInit() {
-    this.getSurveyFail();
+    this.getSurveys();
   }
 
-  getSurveyFail() {
+  getSurveys() {
     this.otsService.getOTSPendientes().then(data => {
       this.data = JSON.parse(data.data);
       console.log("Resultado", this.data);
@@ -34,12 +36,22 @@ export class SurveysPage implements OnInit {
     console.log("SURVEY", elemento);
     for (let i = 0; i < elemento.groups.length; i++) {
       for (let ii = 0; ii < elemento.groups[i].attributes.length; ii++) {
-      console.log("ATRIBUTOS_ID",elemento.groups[i].attributes[ii].attributes_id);
-      console.log("widget_type",elemento.groups[i].attributes[ii].widget_type);
-      let label = "";
-       label = `<label>${elemento.groups[i].attributes[ii].attributes_name}</label><br>`
-      this.result= this.result+ label;
+        console.log(
+          "ATRIBUTOS_ID",
+          elemento.groups[i].attributes[ii].attributes_id
+        );
+        console.log(
+          "widget_type",
+          elemento.groups[i].attributes[ii].widget_type
+        );
+        let label = "";
+        label = `<label>${
+          elemento.groups[i].attributes[ii].attributes_name
+        }</label><br>`;
+        this.result = this.result + label;
+      }
     }
-  }
+    this.router.navigate([
+      "surveys-detalle",this.result]);
   }
 }

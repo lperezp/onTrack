@@ -13,8 +13,7 @@ export class OtsPendientesPage implements OnInit {
   jobs: any;
   constructor(
     private otsService: OtsPendientesService,
-    private router: Router,
-    private NavCtrl: NavController
+    private router: Router
   ) {}
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./surveys-detalle.page.scss'],
 })
 export class SurveysDetallePage implements OnInit {
+  label: any;
 
-  constructor() { }
+  constructor(private activeRoute : ActivatedRoute) {
+    this.label = this.activeRoute.snapshot.paramMap.get("label")  }
 
   ngOnInit() {
+    console.log(this.label)
   }
 
 }
