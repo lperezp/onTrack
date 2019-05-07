@@ -11,10 +11,10 @@ import { Router } from "@angular/router";
 export class SurveysPage implements OnInit {
   data: any;
   surveys: any;
-  text: any;
   attributes_id: any;
   widget_type: any;
   result: string = "";
+  attribute_values: any;
   constructor(
     private otsService: OtsPendientesService,
     private router: Router
@@ -30,32 +30,45 @@ export class SurveysPage implements OnInit {
   getSurveys() {
     this.otsService.getOTSPendientes().then(data => {
       this.data = JSON.parse(data.data);
-      console.log("Resultado", this.data);
       this.surveys = this.data["surveys"];
-      this.text = this.surveys[0].domain_name;
-      console.log(this.surveys[0].domain_name);
-      console.log(this.surveys);
+      this.attribute_values = this.data["attribute_values"];
+      console.log("atributos", this.attribute_values);
+      console.log("SIZE_atributos", this.attribute_values.length);
     });
   }
 
   openSurvey(elemento) {
     let tipo = "";
+    let x ="";
     this.result = "";
     console.log("SURVEY", elemento);
     for (let i = 0; i < elemento.groups.length; i++) {
       for (let ii = 0; ii < elemento.groups[i].attributes.length; ii++) {
-        console.log(
-          "ATRIBUTOS_ID",
-          elemento.groups[i].attributes[ii].attributes_id
-        );
-        console.log(
-          "widget_type",
-          elemento.groups[i].attributes[ii].widget_type
-        );
-
+        console.log("ATRIBUTOS_ID",elemento.groups[i].attributes[ii].attributes_id);
+        console.log("widget_type",elemento.groups[i].attributes[ii].widget_type);
+        for(let iii = 0; iii< this.attribute_values.length;iii++){
+          if(this.attribute_values[iii].attributes_id == elemento.groups[i].attributes[ii].attributes_id ){
+            console.log("Igual",this.attribute_values[iii].attributes_id)
+            for(let c = 0; c < this.attribute_values[iii].values.length; c++){
+              console.log("valores",this.attribute_values[iii].values[c].code)
+            }
+          }
+        }
+        
         switch (elemento.groups[i].attributes[ii].widget_type) {
           case "RadioGroup": {
-            tipo = `<div><input  type="radio" /></div>`;
+            x ="";
+            tipo= "";
+            for(let iii = 0; iii< this.attribute_values.length;iii++){
+              if(this.attribute_values[iii].attributes_id == elemento.groups[i].attributes[ii].attributes_id ){
+                console.log("Igual",this.attribute_values[iii].attributes_id)
+                for(let c = 0; c < this.attribute_values[iii].values.length; c++){
+                  console.log("valores",this.attribute_values[iii].values[c].code)
+                  x = `<div><input type="radio" /><label>${this.attribute_values[iii].values[c].code}</label></div>`;
+                  tipo = tipo +x;
+                }
+              }
+            }
             break;
           }
           case "TextView": {
