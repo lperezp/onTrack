@@ -39,33 +39,43 @@ export class SurveysPage implements OnInit {
 
   openSurvey(elemento) {
     let tipo = "";
-    let x ="";
+    let x = "";
     this.result = "";
     console.log("SURVEY", elemento);
     for (let i = 0; i < elemento.groups.length; i++) {
       for (let ii = 0; ii < elemento.groups[i].attributes.length; ii++) {
-        console.log("ATRIBUTOS_ID",elemento.groups[i].attributes[ii].attributes_id);
-        console.log("widget_type",elemento.groups[i].attributes[ii].widget_type);
-        for(let iii = 0; iii< this.attribute_values.length;iii++){
-          if(this.attribute_values[iii].attributes_id == elemento.groups[i].attributes[ii].attributes_id ){
-            console.log("Igual",this.attribute_values[iii].attributes_id)
-            for(let c = 0; c < this.attribute_values[iii].values.length; c++){
-              console.log("valores",this.attribute_values[iii].values[c].code)
+        console.log(
+          "ATRIBUTOS_ID",
+          elemento.groups[i].attributes[ii].attributes_id
+        );
+        console.log(
+          "widget_type",
+          elemento.groups[i].attributes[ii].widget_type
+        );
+        for (let iii = 0; iii < this.attribute_values.length; iii++) {
+          if (
+            this.attribute_values[iii].attributes_id ==
+            elemento.groups[i].attributes[ii].attributes_id
+          ) {
+            console.log("Igual", this.attribute_values[iii].attributes_id);
+            for (let c = 0; c < this.attribute_values[iii].values.length; c++) {
+              console.log("valores", this.attribute_values[iii].values[c].code);
             }
           }
         }
-        
+
         switch (elemento.groups[i].attributes[ii].widget_type) {
           case "RadioGroup": {
-            x ="";
-            tipo= "";
-            for(let iii = 0; iii< this.attribute_values.length;iii++){
-              if(this.attribute_values[iii].attributes_id == elemento.groups[i].attributes[ii].attributes_id ){
-                console.log("Igual",this.attribute_values[iii].attributes_id)
-                for(let c = 0; c < this.attribute_values[iii].values.length; c++){
-                  console.log("valores",this.attribute_values[iii].values[c].code)
-                  x = `<div><input type="radio" /><label>${this.attribute_values[iii].values[c].code}</label></div>`;
-                  tipo = tipo +x;
+            x = "";
+            tipo = "";
+            for (let iii = 0; iii < this.attribute_values.length; iii++) {
+              if (this.attribute_values[iii].attributes_id ==elemento.groups[i].attributes[ii].attributes_id) {
+                console.log("Igual", this.attribute_values[iii].attributes_id);
+                for (let c = 0;c < this.attribute_values[iii].values.length;c++) {
+                  console.log("valores",this.attribute_values[iii].values[c].code);
+                  x = `<div class="form-check"><input class="form-check-input" type="radio" name="${
+                    this.attribute_values[iii].attributes_id}" value="${this.attribute_values[iii].values[c].value}"><label class="form-check-label">${this.attribute_values[iii].values[c].code}</label></div>`;
+                  tipo = tipo + x;
                 }
               }
             }
@@ -80,7 +90,19 @@ export class SurveysPage implements OnInit {
             break;
           }
           case "CheckGroup": {
-            tipo = `<div><input type="checkbox" /></div>`;
+            x = "";
+            tipo = "";
+            for (let iii = 0; iii < this.attribute_values.length; iii++) {
+              if (this.attribute_values[iii].attributes_id ==elemento.groups[i].attributes[ii].attributes_id) {
+                console.log("Igual", this.attribute_values[iii].attributes_id);
+                for (let c = 0;c < this.attribute_values[iii].values.length;c++) {
+                  console.log("valores",this.attribute_values[iii].values[c].code);
+                  x = `<div class="form-check"><input class="form-check-input" type="checkbox" name="${
+                    this.attribute_values[iii].attributes_id}" value="${this.attribute_values[iii].values[c].value}"><label class="form-check-label">${this.attribute_values[iii].values[c].code}</label></div>`;
+                  tipo = tipo + x;
+                }
+              }
+            }
             break;
           }
         }
