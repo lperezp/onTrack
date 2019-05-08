@@ -17,6 +17,7 @@ export class HomePage {
     private NavCtrl: NavController
   ) {
     this.uuid = this.uuidService.uuid;
+    console.log("UUID DEL EQUIPO",this.uuid);
     this.appName = "OnTrack";
     //UUID PARA PRUEBAS => 123456789123456
     this.uuid = 123456789123456;
