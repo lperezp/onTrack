@@ -26,7 +26,8 @@
         <div class="box-img mr-2">
             <img [src]="image" *ngIf="image" />
         </div>
-        <ion-icon name="camera" color="secondary" class="max-icono" (click)="getCamera()"></ion-icon>
+        <!-- <ion-icon name="camera" color="secondary" class="max-icono" (click)="getCamera()"></ion-icon> -->
+        <div [innerHTML]="evidencias"></div>
       </div>
     <ion-button color="secondary">GRABAR</ion-button>
   </ion-content>

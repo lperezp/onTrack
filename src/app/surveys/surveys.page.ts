@@ -29,6 +29,7 @@ export class SurveysPage implements OnInit {
   ngOnInit() {
     this.getSurveys();
     this.result = "";
+    
   }
 
   getSurveys() {
@@ -38,6 +39,9 @@ export class SurveysPage implements OnInit {
       this.attribute_values = this.data["attribute_values"];
       this.evidence_configurations = this.data["evidence_configurations"];
       console.log(this.evidence_configurations);
+      for(let a = 0; a<this.evidence_configurations.length;a++){
+        console.log("EVIDENCIAS",this.evidence_configurations[a].domains_name);
+      }
     });
   }
 
