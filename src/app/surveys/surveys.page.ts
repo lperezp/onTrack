@@ -52,8 +52,7 @@ export class SurveysPage implements OnInit {
     console.log("SURVEY", elemento);
     for (let i = 0; i < elemento.groups.length; i++) {
       for (let ii = 0; ii < elemento.groups[i].attributes.length; ii++) {
-        console.log("ATRIBUTOS_ID",elemento.groups[i].attributes[ii].attributes_id
-        );
+        console.log("ATRIBUTOS_ID",elemento.groups[i].attributes[ii].attributes_id);
         console.log("widget_type",elemento.groups[i].attributes[ii].widget_type);
         for (let iii = 0; iii < this.attribute_values.length; iii++) {
           if (this.attribute_values[iii].attributes_id == elemento.groups[i].attributes[ii].attributes_id) {

@@ -1,4 +1,3 @@
-import { NavController } from "@ionic/angular";
 import { OtsPendientesService } from "./../services/ots/ots-pendientes/ots-pendientes.service";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
@@ -30,22 +29,6 @@ export class OtsPendientesPage implements OnInit {
   }
 
   selectedOT(elemento) {
-    let ot = {
-      jobs_id: elemento.jobs_id,
-      destination_name: elemento.destination_name,
-      destination_address: elemento.destination_address,
-      destination_entity_info: elemento.destination_entity_info,
-      service_name: elemento.service_name,
-      product_name: elemento.product_name
-    };
-    this.router.navigate([
-      "detalle",
-      ot.jobs_id,
-      ot.destination_name,
-      ot.destination_address,
-      ot.destination_entity_info,
-      ot.service_name,
-      ot.product_name
-    ]);
+    this.router.navigate(["detalle", elemento.services_id]);
   }
 }

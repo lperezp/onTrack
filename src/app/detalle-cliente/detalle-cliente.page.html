@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/ots-pendientes"></ion-back-button>
     </ion-buttons>
-    <ion-title># {{ cliente.jobs_id }}</ion-title>
+    <ion-title># {{ jobs.jobs_id }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
   <div class="text-center estado">
     <ion-text color="secondary">
       <h5 class="font-weight-bold">
-        Completado
+        {{ jobs.actual_status_name }}
       </h5>
     </ion-text>
     <div class="row" style="margin: 25px 0px">
@@ -41,16 +41,16 @@
   <h4 class="text-secondary underline" color="secondary">Destino</h4>
   <div class="destino">
     <ion-text color="dark">
-      <h6 class="font-weight-bold">{{ cliente.destination_name }}</h6>
+      <h6 class="font-weight-bold">{{ jobs.destination_name }}</h6>
     </ion-text>
     <ion-text color="dark">
-      <h6>{{ cliente.destination_address }}</h6>
-      <h6>{{ cliente.destination_entity_info }}</h6>
+      <h6>{{ jobs.destination_address }}</h6>
+      <h6>{{ jobs.destination_entity_info }}</h6>
     </ion-text>
     <h4 class="text-secondary underline" color="secondary">Producto</h4>
     <ion-text color="dark">
       <h6 class="font-weight-bold">{{ cliente.service_name }}</h6>
-      <h6>{{ cliente.product_name }}</h6>
+      <h6>{{ jobs.product_name }}</h6>
     </ion-text>
   </div>
   <div class="row footer">
@@ -60,7 +60,7 @@
     <div class="col text-center" (click)="getCamera()">
       <ion-icon name="camera" color="secondary"></ion-icon>
     </div>
-    <div class="col text-center"  [routerLink]="['/surveys']">
+    <div class="col text-center" [routerLink]="['/surveys']">
       <ion-icon name="checkmark" color="secondary"></ion-icon>
     </div>
   </div>
