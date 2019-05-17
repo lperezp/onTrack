@@ -18,10 +18,19 @@ import { HTTP } from "@ionic-native/http/ngx";
 // IMPORT PLUGIN NATIVE SCREEN ORIENTATION
 import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx";
 import { Camera } from "@ionic-native/camera/ngx";
+
+// IMPORT STORAGE
+import { IonicStorageModule } from "@ionic/storage";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    AppRoutingModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,

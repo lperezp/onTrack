@@ -159,7 +159,7 @@ export class DetalleClientePage implements OnInit {
   }
 
   openOK() {
-    console.log("OK",this.domains_id);
-    this.router.navigate(["surveys", 20]);
+    console.log(this.domains_id)
+    this.router.navigate(["surveys", this.domains_id]);
   }
 }

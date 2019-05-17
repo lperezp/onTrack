@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: "ots-pendientes", loadChildren:"./ots-pendientes/ots-pendientes.module#OtsPendientesPageModule"},
   { path:"detalle/:services_id",loadChildren:"./detalle-cliente/detalle-cliente.module#DetalleClientePageModule"},
   { path: 'firma', loadChildren: './firma/firma.module#FirmaPageModule' },
-  { path: 'surveys', loadChildren: './surveys/surveys.module#SurveysPageModule' },
+  { path: 'surveys/:domains_id', loadChildren: './surveys/surveys.module#SurveysPageModule' },
   { path: 'surveys-detalle/:label', loadChildren: './surveys-detalle/surveys-detalle.module#SurveysDetallePageModule' }
 ];
 

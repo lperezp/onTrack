@@ -1,6 +1,7 @@
 import { OtsPendientesService } from "./../services/ots/ots-pendientes/ots-pendientes.service";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { StorageService } from "../services/storage/storage.service";
 
 @Component({
   selector: "app-ots-pendientes",
@@ -12,7 +13,8 @@ export class OtsPendientesPage implements OnInit {
   jobs: any;
   constructor(
     private otsService: OtsPendientesService,
-    private router: Router
+    private router: Router,
+    private storageService: StorageService
   ) {}
 
   ngOnInit() {

@@ -1,7 +1,7 @@
 import { NavController } from "@ionic/angular";
 import { Component, OnInit } from "@angular/core";
 import { OtsPendientesService } from "../services/ots/ots-pendientes/ots-pendientes.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
 
 @Component({
@@ -18,12 +18,18 @@ export class SurveysPage implements OnInit {
   attribute_values: any;
   evidence_configurations: any;
   image: string;
+  domains_id: any;
+  survey: any = Array();
   constructor(
     private otsService: OtsPendientesService,
     private router: Router,
-    private camera: Camera
+    private camera: Camera,
+    private activeRoute: ActivatedRoute
   ) {
+    this.domains_id = "";
     this.result = "";
+    this.domains_id = this.activeRoute.snapshot.paramMap.get("domains_id");
+    console.log("recibi",this.domains_id);
   }
 
   ngOnInit() {
@@ -35,7 +41,12 @@ export class SurveysPage implements OnInit {
   getSurveys() {
     this.otsService.getOTSPendientes().then(data => {
       this.data = JSON.parse(data.data);
-      this.surveys = this.data["surveys"];
+      this.survey = this.data["surveys"];
+      for(let i =0 ; this.survey.length;i++){
+        if(20 == this.survey[i].domains_id){
+          this.surveys = this.survey[20];
+        }
+      }
       this.attribute_values = this.data["attribute_values"];
       this.evidence_configurations = this.data["evidence_configurations"];
       console.log(this.evidence_configurations);
