@@ -16,6 +16,7 @@ export class OtsPendientesPage implements OnInit {
   surveys: any;
   attribute_values: any;
   evidence_configurations: any;
+  info_request: any;
   constructor(
     private otsService: OtsPendientesService,
     private router: Router,
@@ -33,6 +34,7 @@ export class OtsPendientesPage implements OnInit {
       this.jobs = this.data["jobs"];
       this.services = this.data["jobs"];
       this.surveys = this.data["surveys"];
+      this.info_request = this.data["info_request"];
       this.attribute_values = this.data["attribute_values"];
       this.evidence_configurations = this.data["evidence_configurations"];
       console.log(this.jobs);
@@ -65,7 +67,6 @@ export class OtsPendientesPage implements OnInit {
   }
 
   insertDataJobs() {
-    let data = "";
     for (let i = 0; i < this.jobs.length; i++) {
       let data = this.jobs[i];
       this.taskService
@@ -80,7 +81,6 @@ export class OtsPendientesPage implements OnInit {
     }
   }
   insertDataServices() {
-    let data = "";
     for (let i = 0; i < this.services.length; i++) {
       let data = this.services[i];
       this.taskService
@@ -95,7 +95,6 @@ export class OtsPendientesPage implements OnInit {
     }
   }
   insertDatatSurveys() {
-    let data = "";
     for (let i = 0; i < this.surveys.length; i++) {
       let data = this.surveys[i];
       this.taskService
@@ -110,7 +109,6 @@ export class OtsPendientesPage implements OnInit {
     }
   }
   insertDataAttributeValue() {
-    let data = "";
     for (let i = 0; i < this.attribute_values.length; i++) {
       let data = this.attribute_values[i];
       this.taskService
@@ -125,11 +123,25 @@ export class OtsPendientesPage implements OnInit {
     }
   }
   insertDataEvidence() {
-    let data = "";
     for (let i = 0; i < this.evidence_configurations.length; i++) {
       let data = this.evidence_configurations[i];
       this.taskService
         .insertEvidence(this.evidence_configurations[i])
+        .then(response => {
+          this.tasks.unshift(data);
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }
+
+  insertDataInfoRequest() {
+    for (let i = 0; i < this.jobs.length; i++) {
+      let data = this.info_request[i];
+      this.taskService
+        .insertInfoRequest(this.info_request[i])
         .then(response => {
           this.tasks.unshift(data);
           console.log(response);

@@ -21,6 +21,7 @@ export class TaskSQLiteService {
     this.createTableSurveys();
     this.createTableAttributeValue();
     this.createTableEvidence();
+    this.createTableInfoRequest();
   }
   createTableJobs() {
     let table_jobs =
@@ -62,6 +63,14 @@ export class TaskSQLiteService {
     });
   }
 
+  createTableInfoRequest() {
+    let table_info_request =
+      "CREATE TABLE IF NOT EXISTS table_info_request( service_statuses_id INTEGER,info_request_sequences_id INTEGER,info_request_group_sequence INTEGER,info_request_sequence INTEGER,domains_id INTEGER,domains_name TEXT,info_request_updated_at TEXT)";
+    return this.db.executeSql(table_info_request, []).catch(err => {
+      console.log("Error", err);
+    });
+  }
+
   // INSERT DATA
   insertJobs(task: any) {
     let sql =
@@ -90,6 +99,12 @@ export class TaskSQLiteService {
   insertEvidence(task: any) {
     let sql =
       "INSERT INTO table_evidence_configurations(domains_id ,domains_name,quantity) VALUES(?,?,?)";
+    return this.db.executeSql(sql, [task.title, task.completed]);
+  }
+
+  insertInfoRequest(task: any) {
+    let sql =
+      "INSERT INTO table_info_request( service_statuses_id,info_request_sequences_id,info_request_group_sequence,info_request_sequence,domains_id,domains_name,info_request_updated_at) VALUES(?,?,?,?,?,?,?)";
     return this.db.executeSql(sql, [task.title, task.completed]);
   }
 
