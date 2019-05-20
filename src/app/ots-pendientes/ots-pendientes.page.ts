@@ -12,6 +12,10 @@ export class OtsPendientesPage implements OnInit {
   data: any;
   jobs: any;
   tasks: any[] = [];
+  services: any;
+  surveys: any;
+  attribute_values: any;
+  evidence_configurations: any;
   constructor(
     private otsService: OtsPendientesService,
     private router: Router,
@@ -27,6 +31,10 @@ export class OtsPendientesPage implements OnInit {
       this.data = JSON.parse(data.data);
       console.log("Resultado", this.data);
       this.jobs = this.data["jobs"];
+      this.services = this.data["jobs"];
+      this.surveys = this.data["surveys"];
+      this.attribute_values = this.data["attribute_values"];
+      this.evidence_configurations = this.data["evidence_configurations"];
       console.log(this.jobs);
       this.insertData();
     });
@@ -49,11 +57,79 @@ export class OtsPendientesPage implements OnInit {
   }
 
   insertData() {
+    this.insertDataJobs();
+    this.insertDataServices();
+    this.insertDatatSurveys();
+    this.insertDataAttributeValue();
+    this.insertDataEvidence();
+  }
+
+  insertDataJobs() {
     let data = "";
     for (let i = 0; i < this.jobs.length; i++) {
       let data = this.jobs[i];
       this.taskService
         .insertJobs(this.jobs[i])
+        .then(response => {
+          this.tasks.unshift(data);
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }
+  insertDataServices() {
+    let data = "";
+    for (let i = 0; i < this.services.length; i++) {
+      let data = this.services[i];
+      this.taskService
+        .insertServices(this.services[i])
+        .then(response => {
+          this.tasks.unshift(data);
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }
+  insertDatatSurveys() {
+    let data = "";
+    for (let i = 0; i < this.surveys.length; i++) {
+      let data = this.surveys[i];
+      this.taskService
+        .insertSurveys(this.surveys[i])
+        .then(response => {
+          this.tasks.unshift(data);
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }
+  insertDataAttributeValue() {
+    let data = "";
+    for (let i = 0; i < this.attribute_values.length; i++) {
+      let data = this.attribute_values[i];
+      this.taskService
+        .insertAttributeValue(this.attribute_values[i])
+        .then(response => {
+          this.tasks.unshift(data);
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }
+  insertDataEvidence() {
+    let data = "";
+    for (let i = 0; i < this.evidence_configurations.length; i++) {
+      let data = this.evidence_configurations[i];
+      this.taskService
+        .insertEvidence(this.evidence_configurations[i])
         .then(response => {
           this.tasks.unshift(data);
           console.log(response);

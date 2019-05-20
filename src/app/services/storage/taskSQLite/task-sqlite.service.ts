@@ -71,7 +71,25 @@ export class TaskSQLiteService {
 
   insertServices(task: any) {
     let sql =
-      "INSERT INTO table_jobs(services_id INTEGER,service_name TEXT,statuses TEXT) VALUES(?,?,?)";
+      "INSERT INTO table_services(services_id,service_name,statuses) VALUES(?,?,?)";
+    return this.db.executeSql(sql, [task.title, task.completed]);
+  }
+
+  insertSurveys(task: any) {
+    let sql =
+      "INSERT INTO table_surveys(domains_id,domain_name,groups) VALUES(?,?,?)";
+    return this.db.executeSql(sql, [task.title, task.completed]);
+  }
+
+  insertAttributeValue(task: any) {
+    let sql =
+      "INSERT INTO table_attribute_values(attributes_id ,at_values ) VALUES(?,?)";
+    return this.db.executeSql(sql, [task.title, task.completed]);
+  }
+
+  insertEvidence(task: any) {
+    let sql =
+      "INSERT INTO table_evidence_configurations(domains_id ,domains_name,quantity) VALUES(?,?,?)";
     return this.db.executeSql(sql, [task.title, task.completed]);
   }
 
