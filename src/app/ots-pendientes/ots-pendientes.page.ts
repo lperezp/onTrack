@@ -19,6 +19,7 @@ export class OtsPendientesPage implements OnInit {
 
   ngOnInit() {
     this.getOTSPendientes();
+    this.storageService.createDatabase();
   }
 
   getOTSPendientes() {
@@ -33,4 +34,6 @@ export class OtsPendientesPage implements OnInit {
   selectedOT(elemento) {
     this.router.navigate(["detalle", elemento.services_id]);
   }
+
+  uploadStorage() {}
 }

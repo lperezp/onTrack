@@ -4,6 +4,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
 import { OtsPendientesService } from "../services/ots/ots-pendientes/ots-pendientes.service";
+import { ToastController } from "@ionic/angular";
 
 @Component({
   selector: "app-detalle-cliente",
@@ -24,7 +25,8 @@ export class DetalleClientePage implements OnInit {
     private activeRoute: ActivatedRoute,
     private camera: Camera,
     private otsService: OtsPendientesService,
-    private router: Router
+    private router: Router,
+    public toastController: ToastController
   ) {
     this.jobs = {
       user_configurations_id: null,
@@ -158,8 +160,20 @@ export class DetalleClientePage implements OnInit {
     );
   }
 
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: "Cambio de estado.",
+      duration: 2000
+    });
+    toast.present();
+  }
+
   openOK() {
-    console.log(this.domains_id)
-    this.router.navigate(["surveys", this.domains_id]);
+    console.log(this.domains_id);
+    if (this.domains_id == null) {
+      this.domains_id++;
+      this.presentToast();
+      this.router.navigate(["surveys", this.domains_id]);
+    }
   }
 }

@@ -21,6 +21,7 @@ import { Camera } from "@ionic-native/camera/ngx";
 
 // IMPORT STORAGE
 import { IonicStorageModule } from "@ionic/storage";
+import { SQLite } from "@ionic-native/sqlite/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +36,7 @@ import { IonicStorageModule } from "@ionic/storage";
     StatusBar,
     SplashScreen,
     Device,
+    SQLite,
     HTTP,
     ScreenOrientation,
     Camera,
