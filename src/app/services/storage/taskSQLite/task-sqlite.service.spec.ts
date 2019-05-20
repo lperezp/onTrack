@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { StorageService } from './storage.service';
+import { TaskSQLiteService } from './task-sqlite.service';
 
-describe('StorageService', () => {
+describe('TaskSQLiteService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: StorageService = TestBed.get(StorageService);
+    const service: TaskSQLiteService = TestBed.get(TaskSQLiteService);
     expect(service).toBeTruthy();
   });
 });

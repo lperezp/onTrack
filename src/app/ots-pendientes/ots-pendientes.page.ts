@@ -1,7 +1,7 @@
+import { TaskSQLiteService } from "./../services/storage/taskSQLite/task-sqlite.service";
 import { OtsPendientesService } from "./../services/ots/ots-pendientes/ots-pendientes.service";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { StorageService } from "../services/storage/storage.service";
 
 @Component({
   selector: "app-ots-pendientes",
@@ -11,15 +11,15 @@ import { StorageService } from "../services/storage/storage.service";
 export class OtsPendientesPage implements OnInit {
   data: any;
   jobs: any;
+  tasks: any[] = [];
   constructor(
     private otsService: OtsPendientesService,
     private router: Router,
-    private storageService: StorageService
+    private taskService: TaskSQLiteService
   ) {}
 
   ngOnInit() {
     this.getOTSPendientes();
-    this.storageService.createDatabase();
   }
 
   getOTSPendientes() {
@@ -28,6 +28,7 @@ export class OtsPendientesPage implements OnInit {
       console.log("Resultado", this.data);
       this.jobs = this.data["jobs"];
       console.log(this.jobs);
+      this.insertData();
     });
   }
 
@@ -36,4 +37,32 @@ export class OtsPendientesPage implements OnInit {
   }
 
   uploadStorage() {}
+
+  // DATABASE
+  getAllTasks() {
+    this.taskService
+      .getAllJobs()
+      .then(tasks => {
+        this.tasks = tasks;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+  insertData() {
+    let data = "";
+    for (let i = 0; i < this.jobs.length; i++) {
+      let data = this.jobs[i];
+      this.taskService
+        .createJobs(this.jobs[i])
+        .then(response => {
+          this.tasks.unshift(data);
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }
 }
