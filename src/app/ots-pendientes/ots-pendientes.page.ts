@@ -36,8 +36,6 @@ export class OtsPendientesPage implements OnInit {
     this.router.navigate(["detalle", elemento.services_id]);
   }
 
-  uploadStorage() {}
-
   // DATABASE
   getAllTasks() {
     this.taskService
@@ -55,7 +53,7 @@ export class OtsPendientesPage implements OnInit {
     for (let i = 0; i < this.jobs.length; i++) {
       let data = this.jobs[i];
       this.taskService
-        .createJobs(this.jobs[i])
+        .insertJobs(this.jobs[i])
         .then(response => {
           this.tasks.unshift(data);
           console.log(response);

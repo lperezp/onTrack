@@ -69,7 +69,7 @@ export class AppComponent {
       .then(db => {
         console.log(db);
         this.taskService.setDatabase(db);
-        return this.taskService.createTableJobs();
+        return this.taskService.createAllTables();
       })
       .catch(error => {
         console.error(error);

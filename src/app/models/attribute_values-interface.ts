@@ -1,4 +1,4 @@
 export interface AttributesValue {
-  attributes_id: SVGAnimatedNumberList;
+  attributes_id: number;
   values: [];
 }
