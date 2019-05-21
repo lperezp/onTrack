@@ -73,7 +73,7 @@ export class OtsPendientesPage implements OnInit {
         .insertJobs(this.jobs[i])
         .then(response => {
           this.tasks.unshift(data);
-          console.log(response);
+          /* console.log(response); */
         })
         .catch(error => {
           console.error(error);
@@ -87,7 +87,7 @@ export class OtsPendientesPage implements OnInit {
         .insertServices(this.services[i])
         .then(response => {
           this.tasks.unshift(data);
-          console.log(response);
+          /* console.log(response); */
         })
         .catch(error => {
           console.error(error);
@@ -101,7 +101,7 @@ export class OtsPendientesPage implements OnInit {
         .insertSurveys(this.surveys[i])
         .then(response => {
           this.tasks.unshift(data);
-          console.log(response);
+          /* console.log(response); */
         })
         .catch(error => {
           console.error(error);
@@ -115,7 +115,7 @@ export class OtsPendientesPage implements OnInit {
         .insertAttributeValue(this.attribute_values[i])
         .then(response => {
           this.tasks.unshift(data);
-          console.log(response);
+          /* console.log(response); */
         })
         .catch(error => {
           console.error(error);
@@ -129,7 +129,7 @@ export class OtsPendientesPage implements OnInit {
         .insertEvidence(this.evidence_configurations[i])
         .then(response => {
           this.tasks.unshift(data);
-          console.log(response);
+          /* console.log(response); */
         })
         .catch(error => {
           console.error(error);

@@ -29,29 +29,31 @@ export class SurveysPage implements OnInit {
     this.domains_id = "";
     this.result = "";
     this.domains_id = this.activeRoute.snapshot.paramMap.get("domains_id");
-    console.log("recibi",this.domains_id);
+    console.log("recibi", this.domains_id);
+    this.getSurveys();
   }
 
   ngOnInit() {
-    this.getSurveys();
     this.result = "";
-    
   }
 
   getSurveys() {
     this.otsService.getOTSPendientes().then(data => {
+      console.log("DOMA", this.domains_id);
       this.data = JSON.parse(data.data);
       this.survey = this.data["surveys"];
-      for(let i =0 ; this.survey.length;i++){
-        if(20 == this.survey[i].domains_id){
-          this.surveys = this.survey[20];
+      for (let ii = 0; ii < this.survey.length; ii++) {
+        if (this.domains_id == this.survey[ii].domains_id) {
+          this.surveys = this.survey[ii];
+          console.log("RESULTADO", this.surveys);
         }
       }
+
       this.attribute_values = this.data["attribute_values"];
       this.evidence_configurations = this.data["evidence_configurations"];
       console.log(this.evidence_configurations);
-      for(let a = 0; a<this.evidence_configurations.length;a++){
-        console.log("EVIDENCIAS",this.evidence_configurations[a].domains_name);
+      for (let a = 0; a < this.evidence_configurations.length; a++) {
+        console.log("EVIDENCIAS", this.evidence_configurations[a].domains_name);
       }
     });
   }
@@ -63,10 +65,19 @@ export class SurveysPage implements OnInit {
     console.log("SURVEY", elemento);
     for (let i = 0; i < elemento.groups.length; i++) {
       for (let ii = 0; ii < elemento.groups[i].attributes.length; ii++) {
-        console.log("ATRIBUTOS_ID",elemento.groups[i].attributes[ii].attributes_id);
-        console.log("widget_type",elemento.groups[i].attributes[ii].widget_type);
+        console.log(
+          "ATRIBUTOS_ID",
+          elemento.groups[i].attributes[ii].attributes_id
+        );
+        console.log(
+          "widget_type",
+          elemento.groups[i].attributes[ii].widget_type
+        );
         for (let iii = 0; iii < this.attribute_values.length; iii++) {
-          if (this.attribute_values[iii].attributes_id == elemento.groups[i].attributes[ii].attributes_id) {
+          if (
+            this.attribute_values[iii].attributes_id ==
+            elemento.groups[i].attributes[ii].attributes_id
+          ) {
             console.log("Igual", this.attribute_values[iii].attributes_id);
             for (let c = 0; c < this.attribute_values[iii].values.length; c++) {
               console.log("valores", this.attribute_values[iii].values[c].code);
@@ -79,12 +90,27 @@ export class SurveysPage implements OnInit {
             x = "";
             tipo = "";
             for (let iii = 0; iii < this.attribute_values.length; iii++) {
-              if (this.attribute_values[iii].attributes_id ==elemento.groups[i].attributes[ii].attributes_id) {
+              if (
+                this.attribute_values[iii].attributes_id ==
+                elemento.groups[i].attributes[ii].attributes_id
+              ) {
                 console.log("Igual", this.attribute_values[iii].attributes_id);
-                for (let c = 0;c < this.attribute_values[iii].values.length;c++) {
-                  console.log("valores",this.attribute_values[iii].values[c].code);
+                for (
+                  let c = 0;
+                  c < this.attribute_values[iii].values.length;
+                  c++
+                ) {
+                  console.log(
+                    "valores",
+                    this.attribute_values[iii].values[c].code
+                  );
                   x = `<div class="form-check"><input class="form-check-input" type="radio" name="${
-                    this.attribute_values[iii].attributes_id}" value="${this.attribute_values[iii].values[c].value}"><label class="form-check-label">${this.attribute_values[iii].values[c].code}</label></div>`;
+                    this.attribute_values[iii].attributes_id
+                  }" value="${
+                    this.attribute_values[iii].values[c].value
+                  }"><label class="form-check-label">${
+                    this.attribute_values[iii].values[c].code
+                  }</label></div>`;
                   tipo = tipo + x;
                 }
               }
@@ -103,12 +129,27 @@ export class SurveysPage implements OnInit {
             x = "";
             tipo = "";
             for (let iii = 0; iii < this.attribute_values.length; iii++) {
-              if (this.attribute_values[iii].attributes_id ==elemento.groups[i].attributes[ii].attributes_id) {
+              if (
+                this.attribute_values[iii].attributes_id ==
+                elemento.groups[i].attributes[ii].attributes_id
+              ) {
                 console.log("Igual", this.attribute_values[iii].attributes_id);
-                for (let c = 0;c < this.attribute_values[iii].values.length;c++) {
-                  console.log("valores",this.attribute_values[iii].values[c].code);
+                for (
+                  let c = 0;
+                  c < this.attribute_values[iii].values.length;
+                  c++
+                ) {
+                  console.log(
+                    "valores",
+                    this.attribute_values[iii].values[c].code
+                  );
                   x = `<div class="form-check"><input class="form-check-input" type="checkbox" name="${
-                    this.attribute_values[iii].attributes_id}" value="${this.attribute_values[iii].values[c].value}"><label class="form-check-label">${this.attribute_values[iii].values[c].code}</label></div>`;
+                    this.attribute_values[iii].attributes_id
+                  }" value="${
+                    this.attribute_values[iii].values[c].value
+                  }"><label class="form-check-label">${
+                    this.attribute_values[iii].values[c].code
+                  }</label></div>`;
                   tipo = tipo + x;
                 }
               }
@@ -118,7 +159,9 @@ export class SurveysPage implements OnInit {
         }
 
         let label = "";
-        label = `<label>${elemento.groups[i].attributes[ii].attributes_name}</label><br>`;
+        label = `<label>${
+          elemento.groups[i].attributes[ii].attributes_name
+        }</label><br>`;
         this.result = this.result + label + tipo;
       }
     }

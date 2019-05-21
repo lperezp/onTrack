@@ -96,40 +96,26 @@ export class DetalleClientePage implements OnInit {
       this.services = res["services"];
       let job = res["jobs"];
       this.info_request = res["info_request"];
-      console.log("info_request", this.info_request);
-      console.log("THIS.SERVICES", this.services);
-      console.log("THIS.TAMANIO", this.services.length);
       for (let i = 0; i < this.services.length; i++) {
         if (this.services_id == this.services[i].services_id) {
           this.cliente = this.services[i];
-          console.log("CLIENTE", this.cliente);
+          console.log("SERVICE", this.cliente);
         }
         if (this.services_id == job[i].services_id) {
           this.jobs = job[i];
-          console.log("jobs", this.jobs);
+          console.log("JOBS_SELECTED", this.jobs);
           this.actual_status_sequence = this.jobs.actual_status_sequence;
           console.log("actual_status_sequence", this.actual_status_sequence);
+          // AQUI ES DONDE PASAR AL SIGUIENTE ESTADO => EL ACTUAL ESTADO DEL SERVICIO
+          for (let i = 0; i < this.cliente["statuses"].length; i++) {
+            if(this.cliente.statuses[i].sequence ==this.actual_status_sequence){
+              this.service_statuses_id = this.cliente.statuses[i].service_statuses_id;
+              console.log("TE TENGO!",this.service_statuses_id)
+            }
+          } 
         }
         this.clientee = this.cliente;
-        for (let i = 0; i < this.clientee["statuses"].length; i++) {
-          if (
-            this.actual_status_sequence == this.clientee.statuses[i].sequence
-          ) {
-            this.service_statuses_id = this.clientee.statuses[
-              i
-            ].service_statuses_id;
-            console.log("service_statuses_id", this.service_statuses_id);
-          }
-        }
-        for (let i = 0; i < this.info_request.length; i++) {
-          if (
-            this.service_statuses_id ==
-            this.info_request[i].info_request_group_sequence
-          ) {
-            this.domains_id = this.info_request[i].domains_id;
-            console.log("DOMAIN", this.domains_id);
-          }
-        }
+        
       }
     });
   }
@@ -162,17 +148,34 @@ export class DetalleClientePage implements OnInit {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: "Cambio de estado.",
+      message: "Obteniendo ubicación.",
       duration: 2000
     });
     toast.present();
   }
 
   openOK() {
-    console.log(this.domains_id);
-    if (this.domains_id == null) {
-      this.domains_id++;
+        console.log("service_status_id",this.service_statuses_id);
+        for (let i = 0; i < this.cliente["statuses"].length; i++) {
+          if(this.cliente.statuses[i].sequence ==this.actual_status_sequence){
+            this.service_statuses_id = this.cliente.statuses[i].service_statuses_id;
+            console.log("TE TENGO!",this.service_statuses_id)
+          }
+        } 
+        for (let i = 0; i < this.info_request.length; i++) {
+          if (this.service_statuses_id ==this.info_request[i].service_statuses_id) {
+            this.domains_id = this.info_request[i].domains_id;
+            console.log("DOMAIN", this.domains_id);
+            break; /*  CORREGIR ESTO  */
+          }
+        }
+    console.log("ID_DOM",this.domains_id);
+    if (this.domains_id == null || this.domains_id == "") {
+      this.actual_status_sequence++;
+      console.log("actual_status_sequence++",this.actual_status_sequence);
       this.presentToast();
+    }else{
+      console.log("ID_DOM_inside",this.domains_id);
       this.router.navigate(["surveys", this.domains_id]);
     }
   }
