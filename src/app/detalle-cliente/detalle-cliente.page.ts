@@ -18,9 +18,12 @@ export class DetalleClientePage implements OnInit {
   jobs: JobsInterface;
   actual_status_sequence: number;
   clientee: any = Array();
-  service_statuses_id: any;
+  service_statuses_id: any; 
   info_request: any;
   domains_id: any;
+  jobs_id: string;
+  sizeStatus: number;
+  porc: number;
   constructor(
     private activeRoute: ActivatedRoute,
     private camera: Camera,
@@ -91,6 +94,8 @@ export class DetalleClientePage implements OnInit {
     };
     this.services_id = this.activeRoute.snapshot.paramMap.get("services_id");
     console.log(this.services_id);
+    this.jobs_id = this.activeRoute.snapshot.paramMap.get("jobs_id");
+    console.log(this.jobs_id);
     this.otsService.getOTSPendientes().then(data => {
       let res = JSON.parse(data.data);
       this.services = res["services"];
@@ -106,7 +111,18 @@ export class DetalleClientePage implements OnInit {
           console.log("JOBS_SELECTED", this.jobs);
           this.actual_status_sequence = this.jobs.actual_status_sequence;
           console.log("actual_status_sequence", this.actual_status_sequence);
-          // AQUI ES DONDE PASAR AL SIGUIENTE ESTADO => EL ACTUAL ESTADO DEL SERVICIO
+          this.porc = this.actual_status_sequence/this.sizeStatus;
+      /*      */
+      let ot : any = Array();
+      
+          for(let a= 0; a < job.length; a++){
+            if(job[a].jobs_id == this.jobs_id){
+              this.jobs = job[a];
+              console.log("El ultimo", this.jobs);
+            }
+          }
+      /*      */
+      this.sizeStatus= this.cliente["statuses"].length;
           for (let i = 0; i < this.cliente["statuses"].length; i++) {
             if (
               this.cliente.statuses[i].sequence == this.actual_status_sequence
@@ -167,9 +183,7 @@ export class DetalleClientePage implements OnInit {
       }
     }
     for (let i = 0; i < this.info_request.length; i++) {
-      if (
-        this.service_statuses_id == this.info_request[i].service_statuses_id
-      ) {
+      if (this.service_statuses_id == this.info_request[i].service_statuses_id) {
         this.domains_id = this.info_request[i].domains_id;
         console.log("DOMAIN", this.domains_id);
         break; /*  CORREGIR ESTO  */
@@ -178,7 +192,7 @@ export class DetalleClientePage implements OnInit {
     console.log("ID_DOM", this.domains_id);
     if (this.domains_id == null || this.domains_id == "") {
       this.actual_status_sequence++;
-
+      this.porc = this.actual_status_sequence/this.sizeStatus;
       console.log("actual_status_sequence++", this.actual_status_sequence);
       this.presentToast();
     } else {

@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {path: "home",loadChildren: "./home/home.module#HomePageModule"},
   {path: "ots-pendientes", loadChildren:"./ots-pendientes/ots-pendientes.module#OtsPendientesPageModule"},
-  { path:"detalle/:services_id",loadChildren:"./detalle-cliente/detalle-cliente.module#DetalleClientePageModule"},
+  { path:"detalle/:services_id/:jobs_id",loadChildren:"./detalle-cliente/detalle-cliente.module#DetalleClientePageModule"},
   { path: 'firma', loadChildren: './firma/firma.module#FirmaPageModule' },
   { path: 'surveys/:domains_id', loadChildren: './surveys/surveys.module#SurveysPageModule' },
   { path: 'surveys-detalle/:label', loadChildren: './surveys-detalle/surveys-detalle.module#SurveysDetallePageModule' }

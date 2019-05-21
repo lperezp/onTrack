@@ -43,7 +43,7 @@ export class OtsPendientesPage implements OnInit {
   }
 
   selectedOT(elemento) {
-    this.router.navigate(["detalle", elemento.services_id]);
+    this.router.navigate(["detalle", elemento.services_id,elemento.jobs_id]);
   }
 
   // DATABASE

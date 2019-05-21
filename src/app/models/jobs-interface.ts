@@ -2,7 +2,7 @@ export interface JobsInterface {
   user_configurations_id: number;
   companies_id: number;
   locations_id: number;
-  jobs_id: number;
+  jobs_id: any;
   job_sequence: string;
   job_legacy_code: string;
   job_schedule_date: string;
