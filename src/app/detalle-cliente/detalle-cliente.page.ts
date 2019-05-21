@@ -108,14 +108,17 @@ export class DetalleClientePage implements OnInit {
           console.log("actual_status_sequence", this.actual_status_sequence);
           // AQUI ES DONDE PASAR AL SIGUIENTE ESTADO => EL ACTUAL ESTADO DEL SERVICIO
           for (let i = 0; i < this.cliente["statuses"].length; i++) {
-            if(this.cliente.statuses[i].sequence ==this.actual_status_sequence){
-              this.service_statuses_id = this.cliente.statuses[i].service_statuses_id;
-              console.log("TE TENGO!",this.service_statuses_id)
+            if (
+              this.cliente.statuses[i].sequence == this.actual_status_sequence
+            ) {
+              this.service_statuses_id = this.cliente.statuses[
+                i
+              ].service_statuses_id;
+              console.log("TE TENGO!", this.service_statuses_id);
             }
-          } 
+          }
         }
         this.clientee = this.cliente;
-        
       }
     });
   }
@@ -155,27 +158,31 @@ export class DetalleClientePage implements OnInit {
   }
 
   openOK() {
-        console.log("service_status_id",this.service_statuses_id);
-        for (let i = 0; i < this.cliente["statuses"].length; i++) {
-          if(this.cliente.statuses[i].sequence ==this.actual_status_sequence){
-            this.service_statuses_id = this.cliente.statuses[i].service_statuses_id;
-            console.log("TE TENGO!",this.service_statuses_id)
-          }
-        } 
-        for (let i = 0; i < this.info_request.length; i++) {
-          if (this.service_statuses_id ==this.info_request[i].service_statuses_id) {
-            this.domains_id = this.info_request[i].domains_id;
-            console.log("DOMAIN", this.domains_id);
-            break; /*  CORREGIR ESTO  */
-          }
-        }
-    console.log("ID_DOM",this.domains_id);
+    console.log("service_status_id", this.service_statuses_id);
+    for (let i = 0; i < this.cliente["statuses"].length; i++) {
+      if (this.cliente.statuses[i].sequence == this.actual_status_sequence) {
+        this.jobs.actual_status_name = this.cliente.statuses[i].name;
+        this.service_statuses_id = this.cliente.statuses[i].service_statuses_id;
+        /* console.log("TE TENGO!",this.service_statuses_id) */
+      }
+    }
+    for (let i = 0; i < this.info_request.length; i++) {
+      if (
+        this.service_statuses_id == this.info_request[i].service_statuses_id
+      ) {
+        this.domains_id = this.info_request[i].domains_id;
+        console.log("DOMAIN", this.domains_id);
+        break; /*  CORREGIR ESTO  */
+      }
+    }
+    console.log("ID_DOM", this.domains_id);
     if (this.domains_id == null || this.domains_id == "") {
       this.actual_status_sequence++;
-      console.log("actual_status_sequence++",this.actual_status_sequence);
+
+      console.log("actual_status_sequence++", this.actual_status_sequence);
       this.presentToast();
-    }else{
-      console.log("ID_DOM_inside",this.domains_id);
+    } else {
+      console.log("ID_DOM_inside", this.domains_id);
       this.router.navigate(["surveys", this.domains_id]);
     }
   }
